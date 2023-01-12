@@ -1,0 +1,155 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xck26-sfvc784-2LV-c",
+      "gen_directory": "../../../../Accumulator.gen/sources_1/bd/Accumulator",
+      "name": "Accumulator",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.2"
+    },
+    "design_tree": {
+      "data_0": "",
+      "multi_fifo_0": ""
+    },
+    "components": {
+      "data_0": {
+        "vlnv": "xilinx.com:module_ref:data:1.0",
+        "xci_name": "Accumulator_data_0_0",
+        "xci_path": "ip\\Accumulator_data_0_0\\Accumulator_data_0_0.xci",
+        "inst_hier_path": "data_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "data",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "IS_EMPTY": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "RD_EN": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "DATA_IN": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "multi_fifo_0": {
+        "vlnv": "xilinx.com:module_ref:multi_fifo:1.0",
+        "xci_name": "Accumulator_multi_fifo_0_4",
+        "xci_path": "ip\\Accumulator_multi_fifo_0_4\\Accumulator_multi_fifo_0_4.xci",
+        "inst_hier_path": "multi_fifo_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "multi_fifo",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "I_PUSH": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "I_REAR": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "I_R_EN": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DATA_OUT": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "EMPTY": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "FULL": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Net": {
+        "ports": [
+          "data_0/CLK",
+          "multi_fifo_0/CLK"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "data_0/RESET",
+          "multi_fifo_0/RESET"
+        ]
+      },
+      "data_0_RD_EN": {
+        "ports": [
+          "data_0/RD_EN",
+          "multi_fifo_0/I_R_EN"
+        ]
+      },
+      "multi_fifo_0_DATA_OUT": {
+        "ports": [
+          "multi_fifo_0/DATA_OUT",
+          "data_0/DATA_IN"
+        ]
+      },
+      "multi_fifo_0_EMPTY": {
+        "ports": [
+          "multi_fifo_0/EMPTY",
+          "data_0/IS_EMPTY"
+        ]
+      }
+    }
+  }
+}

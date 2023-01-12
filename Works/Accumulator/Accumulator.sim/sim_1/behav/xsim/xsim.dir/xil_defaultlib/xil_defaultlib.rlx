@@ -1,0 +1,8 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,uvm,,,,,,
+D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/demultiplexer.sv,1673493793,systemVerilog,,D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv,,demultiplexer,,uvm,,,,,,
+D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv,1673493831,systemVerilog,,D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/process_data.sv,,multiplexer,,uvm,,,,,,
+D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/process_data.sv,1673493476,systemVerilog,,,,process_data,,uvm,,,,,,
