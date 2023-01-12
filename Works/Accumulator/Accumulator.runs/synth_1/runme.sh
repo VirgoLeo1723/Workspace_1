@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.runs/synth_1'
+HD_PWD='D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log fifos.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifos.tcl
+EAStep vivado -log Accumulator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Accumulator.tcl

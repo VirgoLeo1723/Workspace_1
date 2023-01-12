@@ -1,0 +1,144 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Jan 12 21:08:10 2023
+# Process ID: 13488
+# Current directory: D:/Study/HK222/PAPER/Practice/Accumulator
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7252 D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.xpr
+# Log file: D:/Study/HK222/PAPER/Practice/Accumulator/vivado.log
+# Journal file: D:/Study/HK222/PAPER/Practice/Accumulator\vivado.jou
+# Running On: DESKTOP-BR8935G, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 2, Host memory: 8481 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.xpr
+update_compile_order -fileset sources_1
+pdate_compile_order -fileset sources_1
+open_bd_design {D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd}
+startgroup
+delete_bd_objs [get_bd_nets data_0_RD_EN] [get_bd_nets fifos_0_EMPTY] [get_bd_nets fifos_0_DATA_OUT] [get_bd_nets Net1] [get_bd_nets Net]
+delete_bd_objs [get_bd_cells fifos_0] [get_bd_cells data_0] [get_bd_cells c_accum_0]
+endgroup
+startgroup
+delete_bd_objs [get_bd_nets data_0_RD_EN] [get_bd_nets fifos_0_EMPTY] [get_bd_nets fifos_0_DATA_OUT] [get_bd_nets Net1] [get_bd_nets Net]
+delete_bd_objs [get_bd_cells fifos_0] [get_bd_cells data_0] [get_bd_cells c_accum_0]
+endgroup
+open_bd_design {D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd}
+save_bd_design
+add_files -norecurse {D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifos_part.v D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/data_part.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/data.v] -no_script -reset -force -quiet
+remove_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/data.v
+export_ip_user_files -of_objects  [get_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifos.v] -no_script -reset -force -quiet
+remove_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifos.v
+create_bd_cell -type module -reference data data_0
+set_property location {1 92 -46} [get_bd_cells data_0]
+delete_bd_objs [get_bd_cells data_0]
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v
+update_compile_order -fileset sources_1
+set_property file_type SystemVerilog [get_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v]
+export_ip_user_files -of_objects  [get_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v] -no_script -reset -force -quiet
+remove_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+save_bd_design
+update_module_reference Accumulator_data_0_2
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv
+update_compile_order -fileset sources_1
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference data_part data_part_0
+set_property location {0.5 -167 -91} [get_bd_cells data_part_0]
+create_bd_cell -type module -reference fifos_part fifos_part_0
+set_property location {1.5 154 -258} [get_bd_cells data_part_0]
+set_property location {1 -181 -256} [get_bd_cells fifos_part_0]
+connect_bd_net [get_bd_pins fifos_part_0/CLK] [get_bd_pins data_part_0/CLK]
+connect_bd_net [get_bd_pins fifos_part_0/RESET] [get_bd_pins data_part_0/RESET]
+connect_bd_net [get_bd_pins fifos_part_0/EMPTY] [get_bd_pins data_part_0/IS_EMPTY]
+connect_bd_net [get_bd_pins fifos_part_0/DATA_OUT] [get_bd_pins data_part_0/DATA_IN]
+connect_bd_net [get_bd_pins fifos_part_0/I_R_EN] [get_bd_pins data_part_0/RD_EN]
+regenerate_bd_layout
+save_bd_design
+create_ip -name c_accum -vendor xilinx.com -library ip -version 12.0 -module_name c_accum_0
+set_property -dict [list \
+  CONFIG.Bypass {false} \
+  CONFIG.Input_Type {Unsigned} \
+  CONFIG.Input_Width {1} \
+  CONFIG.SCLR {true} \
+] [get_ips c_accum_0]
+generate_target {instantiation_template} [get_files d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci]
+update_compile_order -fileset sources_1
+set_property generate_synth_checkpoint false [get_files  d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci]
+generate_target all [get_files  d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci]
+export_ip_user_files -of_objects [get_files d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci] -directory D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.ip_user_files/sim_scripts -ip_user_files_dir D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.ip_user_files -ipstatic_source_dir D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.cache/compile_simlib/modelsim} {questa=D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.cache/compile_simlib/questa} {riviera=D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.cache/compile_simlib/riviera} {activehdl=D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.sv w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.sv
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.sv] -no_script -reset -force -quiet
+remove_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.sv
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v
+update_compile_order -fileset sources_1
+open_bd_design {D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd}
+create_bd_cell -type module -reference accum_part accum_part_0
+set_property location {3 702 315} [get_bd_cells accum_part_0]
+connect_bd_net [get_bd_pins data_part_0/DATA_OUT] [get_bd_pins accum_part_0/DATA_IN]
+connect_bd_net [get_bd_pins data_part_0/CLK] [get_bd_pins accum_part_0/CLK]
+connect_bd_net [get_bd_pins data_part_0/RESET] [get_bd_pins accum_part_0/RESET]
+regenerate_bd_layout
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top accum_part [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+save_bd_design
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+reset_run synth_1
+update_module_reference Accumulator_accum_part_0_0
+launch_runs synth_1
+wait_on_run synth_1
+startgroup
+delete_bd_objs [get_bd_nets data_part_0_RD_EN] [get_bd_nets data_part_0_DATA_OUT] [get_bd_nets fifos_part_0_EMPTY] [get_bd_nets fifos_part_0_DATA_OUT] [get_bd_nets Net1] [get_bd_nets Net]
+delete_bd_objs [get_bd_cells accum_part_0] [get_bd_cells data_part_0] [get_bd_cells fifos_part_0]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+create_bd_cell -type module -reference fifos_part fifos_part_0
+create_bd_cell -type module -reference data_part data_part_0
+connect_bd_net [get_bd_pins fifos_part_0/DATA_OUT] [get_bd_pins data_part_0/DATA_IN]
+connect_bd_net [get_bd_pins fifos_part_0/EMPTY] [get_bd_pins data_part_0/IS_EMPTY]
+connect_bd_net [get_bd_pins data_part_0/CLK] [get_bd_pins fifos_part_0/CLK]
+connect_bd_net [get_bd_pins fifos_part_0/RESET] [get_bd_pins data_part_0/RESET]
+connect_bd_net [get_bd_pins fifos_part_0/I_R_EN] [get_bd_pins data_part_0/RD_EN]
+create_bd_cell -type module -reference accum_part accum_part_0
+set_property location {2.5 846 -40} [get_bd_cells accum_part_0]
+connect_bd_net [get_bd_pins accum_part_0/CLK] [get_bd_pins data_part_0/CLK]
+connect_bd_net [get_bd_pins accum_part_0/RESET] [get_bd_pins fifos_part_0/RESET]
+connect_bd_net [get_bd_pins accum_part_0/DATA_IN] [get_bd_pins data_part_0/DATA_OUT]
+regenerate_bd_layout
+save_bd_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+refresh_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Accumulator [current_fileset]
+set_property top_lib xil_defaultlib [current_fileset]
+set_property top_file D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+reset_run synth_1
+update_compile_order -fileset sources_1
+update_module_reference Accumulator_accum_part_0_1
+launch_runs synth_1
+wait_on_run synth_1
+refresh_design

@@ -1,0 +1,666 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Jan 12 21:08:10 2023
+# Process ID: 13488
+# Current directory: D:/Study/HK222/PAPER/Practice/Accumulator
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7252 D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.xpr
+# Log file: D:/Study/HK222/PAPER/Practice/Accumulator/vivado.log
+# Journal file: D:/Study/HK222/PAPER/Practice/Accumulator\vivado.jou
+# Running On: DESKTOP-BR8935G, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 2, Host memory: 8481 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+CRITICAL WARNING: [Project 1-19] Could not find the file 'D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifos.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/data.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:48 ; elapsed = 00:00:37 . Memory (MB): peak = 1106.730 ; gain = 287.434
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 12 21:14:19 2023...
+o user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:45 ; elapsed = 00:00:30 . Memory (MB): peak = 1093.543 ; gain = 302.125
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+open_bd_design {D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd}
+Reading block design file <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd>...
+Adding component instance block -- xilinx.com:module_ref:data:1.0 - data_0
+CRITICAL WARNING: [BD 41-1726] Unable to resolve module-source for block '/data_0'.
+Given inputs for module-source, Top-module name : data, Module Type : RTL.
+Please review and update or add design-sources to this project to resolve this module-reference.
+Adding component instance block -- xilinx.com:module_ref:fifos:1.0 - fifos_0
+CRITICAL WARNING: [BD 41-1726] Unable to resolve module-source for block '/fifos_0'.
+Given inputs for module-source, Top-module name : fifos, Module Type : RTL.
+Please review and update or add design-sources to this project to resolve this module-reference.
+Adding component instance block -- xilinx.com:ip:c_accum:12.0 - c_accum_0
+Successfully read diagram <Accumulator> from block design file <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd>
+open_bd_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1253.605 ; gain = 138.379
+startgroup
+delete_bd_objs [get_bd_nets data_0_RD_EN] [get_bd_nets fifos_0_EMPTY] [get_bd_nets fifos_0_DATA_OUT] [get_bd_nets Net1] [get_bd_nets Net]
+delete_bd_objs [get_bd_cells fifos_0] [get_bd_cells data_0] [get_bd_cells c_accum_0]
+endgroup
+startgroup
+delete_bd_objs [get_bd_nets data_0_RD_EN] [get_bd_nets fifos_0_EMPTY] [get_bd_nets fifos_0_DATA_OUT] [get_bd_nets Net1] [get_bd_nets Net]
+WARNING: [BD 5-234] No nets matched 'get_bd_nets data_0_RD_EN'
+WARNING: [BD 5-234] No nets matched 'get_bd_nets fifos_0_EMPTY'
+WARNING: [BD 5-234] No nets matched 'get_bd_nets fifos_0_DATA_OUT'
+WARNING: [BD 5-234] No nets matched 'get_bd_nets Net1'
+WARNING: [BD 5-234] No nets matched 'get_bd_nets Net'
+delete_bd_objs [get_bd_cells fifos_0] [get_bd_cells data_0] [get_bd_cells c_accum_0]
+WARNING: [BD 5-230] No cells matched 'get_bd_cells fifos_0'
+WARNING: [BD 5-230] No cells matched 'get_bd_cells data_0'
+WARNING: [BD 5-230] No cells matched 'get_bd_cells c_accum_0'
+endgroup
+open_bd_design {D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd}
+save_bd_design
+Wrote  : <D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\bd\Accumulator\Accumulator.bd> 
+Wrote  : <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/ui/bd_fd27946.ui> 
+add_files -norecurse {D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifos_part.v D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/data_part.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/data.v] -no_script -reset -force -quiet
+remove_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/data.v
+export_ip_user_files -of_objects  [get_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifos.v] -no_script -reset -force -quiet
+remove_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifos.v
+create_bd_cell -type module -reference data data_0
+set_property location {1 92 -46} [get_bd_cells data_0]
+delete_bd_objs [get_bd_cells data_0]
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v
+update_compile_order -fileset sources_1
+set_property file_type SystemVerilog [get_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v]
+export_ip_user_files -of_objects  [get_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v] -no_script -reset -force -quiet
+remove_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+save_bd_design
+Wrote  : <D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\bd\Accumulator\Accumulator.bd> 
+Wrote  : <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/ui/bd_fd27946.ui> 
+update_module_reference Accumulator_data_0_2
+ERROR: [filemgmt 56-587] Failed to resolve reference. Nothing was found in the project to match the name data Try changing the compile order from manual to automatic. 
+ERROR: [Common 17-39] 'update_module_reference' failed due to earlier errors.
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv
+update_compile_order -fileset sources_1
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference data_part data_part_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'CLK' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+set_property location {0.5 -167 -91} [get_bd_cells data_part_0]
+create_bd_cell -type module -reference fifos_part fifos_part_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'CLK' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+set_property location {1.5 154 -258} [get_bd_cells data_part_0]
+set_property location {1 -181 -256} [get_bd_cells fifos_part_0]
+connect_bd_net [get_bd_pins fifos_part_0/CLK] [get_bd_pins data_part_0/CLK]
+connect_bd_net [get_bd_pins fifos_part_0/RESET] [get_bd_pins data_part_0/RESET]
+connect_bd_net [get_bd_pins fifos_part_0/EMPTY] [get_bd_pins data_part_0/IS_EMPTY]
+connect_bd_net [get_bd_pins fifos_part_0/DATA_OUT] [get_bd_pins data_part_0/DATA_IN]
+connect_bd_net [get_bd_pins fifos_part_0/I_R_EN] [get_bd_pins data_part_0/RD_EN]
+regenerate_bd_layout
+save_bd_design
+WARNING: [BD 41-597] NET <Net> has no source
+WARNING: [BD 41-597] NET <Net1> has no source
+Wrote  : <D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\bd\Accumulator\Accumulator.bd> 
+Wrote  : <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/ui/bd_fd27946.ui> 
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+create_ip -name c_accum -vendor xilinx.com -library ip -version 12.0 -module_name c_accum_0
+set_property -dict [list \
+  CONFIG.Bypass {false} \
+  CONFIG.Input_Type {Unsigned} \
+  CONFIG.Input_Width {1} \
+  CONFIG.SCLR {true} \
+] [get_ips c_accum_0]
+generate_target {instantiation_template} [get_files d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'c_accum_0'...
+update_compile_order -fileset sources_1
+set_property generate_synth_checkpoint false [get_files  d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci]
+generate_target all [get_files  d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'c_accum_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'c_accum_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'c_accum_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'c_accum_0'...
+export_ip_user_files -of_objects [get_files d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/ip/c_accum_0/c_accum_0.xci] -directory D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.ip_user_files/sim_scripts -ip_user_files_dir D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.ip_user_files -ipstatic_source_dir D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.cache/compile_simlib/modelsim} {questa=D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.cache/compile_simlib/questa} {riviera=D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.cache/compile_simlib/riviera} {activehdl=D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\accumulator_label.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\accumulator.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\fifos_part.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\data_part.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\accumulator_label.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\accumulator.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\fifos_part.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\data_part.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\accumulator_label.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\accumulator.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\fifos_part.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\data_part.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\accumulator_label.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\accumulator.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\fifos_part.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\new\data_part.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.sv w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.sv
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.sv] -no_script -reset -force -quiet
+remove_files  D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.sv
+close [ open D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v w ]
+add_files D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v
+update_compile_order -fileset sources_1
+open_bd_design {D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd}
+create_bd_cell -type module -reference accum_part accum_part_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'CLK' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+set_property location {3 702 315} [get_bd_cells accum_part_0]
+connect_bd_net [get_bd_pins data_part_0/DATA_OUT] [get_bd_pins accum_part_0/DATA_IN]
+connect_bd_net [get_bd_pins data_part_0/CLK] [get_bd_pins accum_part_0/CLK]
+connect_bd_net [get_bd_pins data_part_0/RESET] [get_bd_pins accum_part_0/RESET]
+regenerate_bd_layout
+set_property top accum_part [current_fileset]
+update_compile_order -fileset sources_1
+save_bd_design
+WARNING: [BD 41-597] NET <Net> has no source
+WARNING: [BD 41-597] NET <Net1> has no source
+Wrote  : <D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\bd\Accumulator\Accumulator.bd> 
+Wrote  : <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/ui/bd_fd27946.ui> 
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/utils_1/imports/synth_1/process_data.dcp with file D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/fifos.dcp
+launch_runs synth_1
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'Accumulator' found in library 'xil_defaultlib'
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'Accumulator' found in library 'xil_defaultlib'
+[Thu Jan 12 22:11:08 2023] Launched synth_1...
+Run output will be captured here: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:44 . Memory (MB): peak = 1345.191 ; gain = 1.059
+reset_run synth_1
+update_module_reference Accumulator_accum_part_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'CLK' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd'
+INFO: [IP_Flow 19-3420] Updated Accumulator_accum_part_0_0 to use current project options
+WARNING: [BD 41-597] NET <Net> has no source
+WARNING: [BD 41-597] NET <Net1> has no source
+Wrote  : <D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\bd\Accumulator\Accumulator.bd> 
+Wrote  : <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/ui/bd_fd27946.ui> 
+update_module_reference: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 1358.684 ; gain = 13.492
+launch_runs synth_1
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'Accumulator' found in library 'xil_defaultlib'
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'Accumulator' found in library 'xil_defaultlib'
+[Thu Jan 12 22:16:30 2023] Launched synth_1...
+Run output will be captured here: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 1358.684 ; gain = 0.000
+startgroup
+delete_bd_objs [get_bd_nets data_part_0_RD_EN] [get_bd_nets data_part_0_DATA_OUT] [get_bd_nets fifos_part_0_EMPTY] [get_bd_nets fifos_part_0_DATA_OUT] [get_bd_nets Net1] [get_bd_nets Net]
+delete_bd_objs [get_bd_cells accum_part_0] [get_bd_cells data_part_0] [get_bd_cells fifos_part_0]
+endgroup
+save_bd_design
+Wrote  : <D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\bd\Accumulator\Accumulator.bd> 
+Wrote  : <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/ui/bd_fd27946.ui> 
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/utils_1/imports/synth_1/process_data.dcp with file D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/accum_part.dcp
+launch_runs synth_1
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'Accumulator' found in library 'xil_defaultlib'
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'Accumulator' found in library 'xil_defaultlib'
+[Thu Jan 12 22:21:08 2023] Launched synth_1...
+Run output will be captured here: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/runme.log
+create_bd_cell -type module -reference fifos_part fifos_part_0
+create_bd_cell -type module -reference data_part data_part_0
+connect_bd_net [get_bd_pins fifos_part_0/DATA_OUT] [get_bd_pins data_part_0/DATA_IN]
+connect_bd_net [get_bd_pins fifos_part_0/EMPTY] [get_bd_pins data_part_0/IS_EMPTY]
+connect_bd_net [get_bd_pins data_part_0/CLK] [get_bd_pins fifos_part_0/CLK]
+connect_bd_net [get_bd_pins fifos_part_0/RESET] [get_bd_pins data_part_0/RESET]
+connect_bd_net [get_bd_pins fifos_part_0/I_R_EN] [get_bd_pins data_part_0/RD_EN]
+create_bd_cell -type module -reference accum_part accum_part_0
+set_property location {2.5 846 -40} [get_bd_cells accum_part_0]
+connect_bd_net [get_bd_pins accum_part_0/CLK] [get_bd_pins data_part_0/CLK]
+connect_bd_net [get_bd_pins accum_part_0/RESET] [get_bd_pins fifos_part_0/RESET]
+connect_bd_net [get_bd_pins accum_part_0/DATA_IN] [get_bd_pins data_part_0/DATA_OUT]
+regenerate_bd_layout
+save_bd_design
+WARNING: [BD 41-597] NET <Net> has no source
+WARNING: [BD 41-597] NET <Net1> has no source
+Wrote  : <D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\bd\Accumulator\Accumulator.bd> 
+Wrote  : <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/ui/bd_fd27946.ui> 
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xck26-sfvc784-2LV-c
+Top: accum_part
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'SCLR', assumed default net type 'wire' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+INFO: [Synth 8-11241] undeclared symbol 'SCLR', assumed default net type 'wire' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:62]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2687.828 ; gain = 328.711
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'accum_part' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v:23]
+INFO: [Synth 8-6157] synthesizing module 'accumulator_label' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:23]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:62]
+INFO: [Synth 8-638] synthesizing module 'c_accum_0' [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:68]
+	Parameter C_XDEVICEFAMILY bound to: zynquplus - type: string 
+	Parameter C_IMPLEMENTATION bound to: 0 - type: integer 
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 1 - type: integer 
+	Parameter C_OUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_B_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_ADD_MODE bound to: 0 - type: integer 
+	Parameter C_HAS_C_IN bound to: 0 - type: integer 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_BYPASS bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_SCALE bound to: 0 - type: integer 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_BYPASS_LOW bound to: 0 - type: integer 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_accum_v12_0_14' declared at 'd:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/hdl/c_accum_v12_0_vh_rfs.vhd:2311' bound to instance 'U0' of component 'c_accum_v12_0_14' [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:124]
+INFO: [Synth 8-256] done synthesizing module 'c_accum_0' (0#1) [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:68]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:62]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:62]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:62]
+WARNING: [Synth 8-324] index 4 out of range [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:54]
+WARNING: [Synth 8-689] width (2) of port connection 'B' does not match port width (1) of module 'c_accum_0' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:60]
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_label' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'accum_part' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v:23]
+WARNING: [Synth 8-89] always_ff on 'DATA_IN_RGS_reg' did not result in a flip-flop [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:55]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[0].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[1].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[2].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[3].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:44]
+WARNING: [Synth 8-3848] Net SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:62]
+WARNING: [Synth 8-7129] Port CE in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AINIT in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLR in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ASET in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RESET in module accumulator_label is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 2796.328 ; gain = 437.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2814.152 ; gain = 455.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2814.152 ; gain = 455.035
+---------------------------------------------------------------------------------
+INFO: [Synth 37-8] Instance 'i_synth' of a module 'c_accum_v12_0_14_viv' contains a secure attribute.  This instance will appear as a black box in elaborated RTL design. [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/hdl/c_accum_v12_0_vh_rfs.vhd:1906]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2814.152 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.297 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:57 ; elapsed = 00:00:46 . Memory (MB): peak = 3067.969 ; gain = 708.852
+18 Infos, 39 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:16 ; elapsed = 00:01:09 . Memory (MB): peak = 3067.969 ; gain = 1697.852
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+refresh_design
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'SCLR', assumed default net type 'wire' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-11241] undeclared symbol 'SCLR', assumed default net type 'wire' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 3242.965 ; gain = 41.199
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'accum_part' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v:23]
+INFO: [Synth 8-6157] synthesizing module 'accumulator_label' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:23]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+INFO: [Synth 8-638] synthesizing module 'c_accum_0' [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:68]
+	Parameter C_XDEVICEFAMILY bound to: zynquplus - type: string 
+	Parameter C_IMPLEMENTATION bound to: 0 - type: integer 
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 1 - type: integer 
+	Parameter C_OUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_B_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_ADD_MODE bound to: 0 - type: integer 
+	Parameter C_HAS_C_IN bound to: 0 - type: integer 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_BYPASS bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_SCALE bound to: 0 - type: integer 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_BYPASS_LOW bound to: 0 - type: integer 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_accum_v12_0_14' declared at 'd:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/hdl/c_accum_v12_0_vh_rfs.vhd:2311' bound to instance 'U0' of component 'c_accum_v12_0_14' [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:124]
+INFO: [Synth 8-256] done synthesizing module 'c_accum_0' (0#1) [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:68]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-324] index 4 out of range [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:57]
+WARNING: [Synth 8-689] width (2) of port connection 'B' does not match port width (1) of module 'c_accum_0' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_label' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:23]
+WARNING: [Synth 8-7071] port 'DATA_OUT_RGS' of module 'accumulator_label' is unconnected for instance 'INST0' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v:32]
+WARNING: [Synth 8-7071] port 'CLF_VALID' of module 'accumulator_label' is unconnected for instance 'INST0' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v:32]
+WARNING: [Synth 8-7071] port 'RGS_VALID' of module 'accumulator_label' is unconnected for instance 'INST0' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v:32]
+WARNING: [Synth 8-7023] instance 'INST0' of module 'accumulator_label' has 9 connections declared, but only 6 given [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'accum_part' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accum_part.v:23]
+WARNING: [Synth 8-89] always_ff on 'DATA_IN_RGS_reg' did not result in a flip-flop [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:58]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[0].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[1].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[2].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[3].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-7129] Port CE in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AINIT in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLR in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ASET in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RESET in module accumulator_label is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 3336.145 ; gain = 134.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 3346.805 ; gain = 145.039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 3346.805 ; gain = 145.039
+---------------------------------------------------------------------------------
+INFO: [Synth 37-8] Instance 'i_synth' of a module 'c_accum_v12_0_14_viv' contains a secure attribute.  This instance will appear as a black box in elaborated RTL design. [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/hdl/c_accum_v12_0_vh_rfs.vhd:1906]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 3349.203 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:38 . Memory (MB): peak = 3349.203 ; gain = 147.438
+set_property top Accumulator [current_fileset]
+set_property top_lib xil_defaultlib [current_fileset]
+set_property top_file D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv [current_fileset]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/utils_1/imports/synth_1/process_data.dcp with file D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/accum_part.dcp
+update_compile_order -fileset sources_1
+update_module_reference Accumulator_accum_part_0_1
+INFO: [IP_Flow 19-5107] Inferred bus interface 'RESET' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RESET'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'CLK' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/Accumulator.bd'
+INFO: [IP_Flow 19-3420] Updated Accumulator_accum_part_0_1 to use current project options
+WARNING: [BD 41-597] NET <Net> has no source
+WARNING: [BD 41-597] NET <Net1> has no source
+Wrote  : <D:\Study\HK222\PAPER\Practice\Accumulator\Accumulator.srcs\sources_1\bd\Accumulator\Accumulator.bd> 
+Wrote  : <D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/bd/Accumulator/ui/bd_fd27946.ui> 
+update_module_reference: Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 3374.211 ; gain = 8.344
+launch_runs synth_1
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'Accumulator' found in library 'xil_defaultlib'
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'Accumulator' found in library 'xil_defaultlib'
+[Thu Jan 12 23:00:04 2023] Launched synth_1...
+Run output will be captured here: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:27 . Memory (MB): peak = 3374.211 ; gain = 0.000
+refresh_design
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'SCLR', assumed default net type 'wire' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-11241] undeclared symbol 'SCLR', assumed default net type 'wire' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 3374.746 ; gain = 0.535
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Accumulator' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'multi_fifo' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multi_fifo.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'fifo' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifo.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifo.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'multi_fifo' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multi_fifo.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'process_data' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/process_data.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'multiplexer' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv:2]
+	Parameter NO_INPUT bound to: 4 - type: integer 
+	Parameter BITS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'multiplexer' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'demultiplexer' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/demultiplexer.sv:2]
+	Parameter NO_OUTPUT bound to: 4 - type: integer 
+	Parameter BITS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'demultiplexer' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/demultiplexer.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'process_data' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/process_data.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'accumulator_label' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:23]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+INFO: [Synth 8-638] synthesizing module 'c_accum_0' [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:68]
+	Parameter C_XDEVICEFAMILY bound to: zynquplus - type: string 
+	Parameter C_IMPLEMENTATION bound to: 0 - type: integer 
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 1 - type: integer 
+	Parameter C_OUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_B_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_ADD_MODE bound to: 0 - type: integer 
+	Parameter C_HAS_C_IN bound to: 0 - type: integer 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_BYPASS bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_SCALE bound to: 0 - type: integer 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_BYPASS_LOW bound to: 0 - type: integer 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_accum_v12_0_14' declared at 'd:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/hdl/c_accum_v12_0_vh_rfs.vhd:2311' bound to instance 'U0' of component 'c_accum_v12_0_14' [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:124]
+INFO: [Synth 8-256] done synthesizing module 'c_accum_0' (0#1) [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:68]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-324] index 4 out of range [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:57]
+WARNING: [Synth 8-689] width (2) of port connection 'B' does not match port width (1) of module 'c_accum_0' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_label' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'Accumulator' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv:3]
+WARNING: [Synth 8-7137] Register mem_reg in module fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register DATA_OUT_reg in module fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifo.sv:42]
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-89] always_ff on 'DATA_IN_RGS_reg' did not result in a flip-flop [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:58]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[0].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[1].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[2].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[3].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-7129] Port CE in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AINIT in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLR in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ASET in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RESET in module accumulator_label is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_flush in module Accumulator is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 3380.066 ; gain = 5.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 3392.805 ; gain = 18.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 3392.805 ; gain = 18.594
+---------------------------------------------------------------------------------
+INFO: [Synth 37-8] Instance 'i_synth' of a module 'c_accum_v12_0_14_viv' contains a secure attribute.  This instance will appear as a black box in elaborated RTL design. [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/hdl/c_accum_v12_0_vh_rfs.vhd:1906]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 3395.207 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:39 . Memory (MB): peak = 3395.207 ; gain = 20.996
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 12 23:27:54 2023...

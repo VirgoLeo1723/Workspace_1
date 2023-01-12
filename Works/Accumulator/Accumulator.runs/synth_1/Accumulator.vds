@@ -1,0 +1,395 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Jan 12 23:00:14 2023
+# Process ID: 12984
+# Current directory: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1
+# Command line: vivado.exe -log Accumulator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Accumulator.tcl
+# Log file: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/Accumulator.vds
+# Journal file: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1\vivado.jou
+# Running On: DESKTOP-BR8935G, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 2, Host memory: 8481 MB
+#-----------------------------------------------------------
+source Accumulator.tcl -notrace
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 394.430 ; gain = 75.500
+Command: read_checkpoint -auto_incremental -incremental D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/utils_1/imports/synth_1/process_data.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/utils_1/imports/synth_1/process_data.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top Accumulator -part xck26-sfvc784-2LV-c
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13276
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'SCLR', assumed default net type 'wire' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-11241] undeclared symbol 'SCLR', assumed default net type 'wire' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1775.035 ; gain = 331.195
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Accumulator' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'multi_fifo' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multi_fifo.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'fifo' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifo.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifo.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'multi_fifo' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multi_fifo.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'process_data' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/process_data.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'multiplexer' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv:2]
+	Parameter NO_INPUT bound to: 4 - type: integer 
+	Parameter BITS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'multiplexer' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'demultiplexer' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/demultiplexer.sv:2]
+	Parameter NO_OUTPUT bound to: 4 - type: integer 
+	Parameter BITS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'demultiplexer' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/demultiplexer.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'process_data' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/process_data.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'accumulator_label' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:23]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+INFO: [Synth 8-638] synthesizing module 'c_accum_0' [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:68]
+	Parameter C_XDEVICEFAMILY bound to: zynquplus - type: string 
+	Parameter C_IMPLEMENTATION bound to: 0 - type: integer 
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 1 - type: integer 
+	Parameter C_OUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_B_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_ADD_MODE bound to: 0 - type: integer 
+	Parameter C_HAS_C_IN bound to: 0 - type: integer 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_BYPASS bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 1 - type: integer 
+	Parameter C_SCALE bound to: 0 - type: integer 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_BYPASS_LOW bound to: 0 - type: integer 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_accum_v12_0_14' declared at 'd:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/hdl/c_accum_v12_0_vh_rfs.vhd:2311' bound to instance 'U0' of component 'c_accum_v12_0_14' [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:124]
+INFO: [Synth 8-256] done synthesizing module 'c_accum_0' (0#1) [d:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.gen/sources_1/ip/c_accum_0/synth/c_accum_0.vhd:68]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+INFO: [Synth 8-556] previous implicit net 'SCLR' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-324] index 4 out of range [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:57]
+WARNING: [Synth 8-689] width (2) of port connection 'B' does not match port width (1) of module 'c_accum_0' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'accumulator_label' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'Accumulator' (0#1) [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator.sv:3]
+WARNING: [Synth 8-7137] Register mem_reg in module fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register DATA_OUT_reg in module fifo has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifo.sv:42]
+WARNING: [Synth 8-4767] Trying to implement RAM 'mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mem_reg" dissolved into registers
+WARNING: [Synth 8-89] always_ff on 'DATA_IN_RGS_reg' did not result in a flip-flop [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:58]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[0].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[1].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[2].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net ACCUMULATOR[3].SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:47]
+WARNING: [Synth 8-3848] Net SCLR in module/entity accumulator_label does not have driver. [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:65]
+WARNING: [Synth 8-7129] Port CE in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AINIT in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLR in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ASET in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module c_reg_fd_v12_0_6_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_14_lut6_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_14_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_accum_v12_0_14_fabric_legacy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RESET in module accumulator_label is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_flush in module Accumulator is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1881.527 ; gain = 437.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1899.457 ; gain = 455.617
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1899.457 ; gain = 455.617
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1911.484 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 155 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2020.793 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 2020.793 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 2020.793 ; gain = 576.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xck26-sfvc784-2LV-c
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 2020.793 ; gain = 576.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst2/\ACCUMULATOR[0].INST0 . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst2/\ACCUMULATOR[1].INST0 . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst2/\ACCUMULATOR[2].INST0 . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst2/\ACCUMULATOR[3].INST0 . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst2/INST1. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 2020.793 ; gain = 576.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/utils_1/imports/synth_1/process_data.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:52 ; elapsed = 00:01:00 . Memory (MB): peak = 2020.793 ; gain = 576.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:52 ; elapsed = 00:01:00 . Memory (MB): peak = 2020.793 ; gain = 576.953
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'DATA_IN_RGS_reg' [D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/accumulator_label.sv:58]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:52 ; elapsed = 00:01:01 . Memory (MB): peak = 2020.793 ; gain = 576.953
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : 
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1248 (col length:96)
+BRAMs: 288 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[63] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[62] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[61] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[60] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[59] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[58] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[57] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[56] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[55] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[54] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[53] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[52] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[51] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[50] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[49] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[48] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[47] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[46] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[45] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[44] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[43] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[42] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[41] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[40] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[39] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[38] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[37] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[36] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[35] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[34] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[33] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[32] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[31] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[30] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[29] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[28] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[27] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[26] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[25] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[24] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[23] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[22] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[21] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[20] driven by constant 0
+WARNING: [Synth 8-3917] design Accumulator has port o_clf_accum_reg[19] driven by constant 0
+WARNING: [Synth 8-7129] Port ADD in module c_accum_v12_0_14_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_IN in module c_accum_v12_0_14_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module c_accum_v12_0_14_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BYPASS in module c_accum_v12_0_14_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module c_accum_v12_0_14_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module c_accum_v12_0_14_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_flush in module Accumulator is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (inst2/DATA_IN_RGS_reg[1]) is unused and will be removed from module Accumulator.
+WARNING: [Synth 8-3332] Sequential element (inst2/DATA_IN_RGS_reg[0]) is unused and will be removed from module Accumulator.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:01:10 . Memory (MB): peak = 2020.793 ; gain = 576.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:41 ; elapsed = 00:01:56 . Memory (MB): peak = 2439.160 ; gain = 995.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:41 ; elapsed = 00:01:56 . Memory (MB): peak = 2439.457 ; gain = 995.617
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:41 ; elapsed = 00:01:57 . Memory (MB): peak = 2458.578 ; gain = 1014.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 2465.305 ; gain = 1021.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 2465.305 ; gain = 1021.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 2465.305 ; gain = 1021.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 2465.305 ; gain = 1021.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 2465.305 ; gain = 1021.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 2465.305 ; gain = 1021.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |    11|
+|3     |LUT2  |    17|
+|4     |LUT3  |     8|
+|5     |LUT4  |     8|
+|6     |LUT5  |    42|
+|7     |LUT6  |    38|
+|8     |MUXCY |    30|
+|9     |MUXF7 |     9|
+|10    |XORCY |    32|
+|11    |FDCE  |    40|
+|12    |FDRE  |   142|
+|13    |FDSE  |     2|
+|14    |IBUF  |    16|
+|15    |OBUF  |    89|
++------+------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 2465.305 ; gain = 1021.465
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 56 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:22 ; elapsed = 00:02:07 . Memory (MB): peak = 2465.305 ; gain = 900.129
+Synthesis Optimization Complete : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 2465.305 ; gain = 1021.465
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2473.387 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 88 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2509.359 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 21 instances were transformed.
+  (CARRY4) => CARRY8: 4 instances
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 16 instances
+
+Synth Design complete, checksum: c761846
+INFO: [Common 17-83] Releasing license: Synthesis
+45 Infos, 97 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:20 ; elapsed = 00:02:45 . Memory (MB): peak = 2509.359 ; gain = 2043.770
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/Accumulator.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Accumulator_utilization_synth.rpt -pb Accumulator_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 12 23:03:28 2023...
