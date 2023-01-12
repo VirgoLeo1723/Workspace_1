@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/data.tcl"
+  variable script "D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/fifos.tcl"
   variable category "vivado_synth"
 }
 
@@ -72,6 +72,7 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param synth.incrementalSynthesisCache C:/Users/htn23/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9040-DESKTOP-BR8935G/incrSyn
+set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -89,12 +90,12 @@ set_property ip_output_repo d:/Study/HK221/PAPER/Practice/Accumulator/Accumulato
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib -sv {
-  D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/demultiplexer.sv
-  D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv
-  D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/process_data.sv
-  D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/data.sv
+read_verilog -library xil_defaultlib -sv D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifo.sv
+read_verilog -library xil_defaultlib {
+  D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multi_fifo.sv
+  D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/fifos.v
 }
+set_property file_type Verilog [get_files D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multi_fifo.sv]
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -110,7 +111,7 @@ read_checkpoint -auto_incremental -incremental D:/Study/HK221/PAPER/Practice/Acc
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top data -part xck26-sfvc784-2LV-c
+synth_design -top fifos -part xck26-sfvc784-2LV-c
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -120,10 +121,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef data.dcp
+write_checkpoint -force -noxdef fifos.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file data_utilization_synth.rpt -pb data_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file fifos_utilization_synth.rpt -pb fifos_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

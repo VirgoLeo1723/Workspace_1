@@ -1,19 +1,19 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.01176",
-   "Default View_TopLeft":"0,-43",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-274,-84",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
 #  -string -flagsOSRD
-preplace inst data_0 -pg 1 -lvl 2 -x 510 -y 120 -defaultsOSRD
-preplace inst multi_fifo_0 -pg 1 -lvl 1 -x 190 -y 130 -defaultsOSRD
-preplace netloc Net 1 0 2 20 10 360
-preplace netloc Net1 1 0 2 30 20 350
-preplace netloc multi_fifo_0_EMPTY 1 1 1 N 130
-preplace netloc data_0_RD_EN 1 0 3 40 30 NJ 30 660
-preplace netloc multi_fifo_0_DATA_OUT 1 1 1 340 110n
-levelinfo -pg 1 0 190 510 680
-pagesize -pg 1 -db -bbox -sgen 0 0 680 230
+preplace inst data_0 -pg 1 -lvl 2 -x 240 -y 80 -defaultsOSRD
+preplace inst fifos_0 -pg 1 -lvl 1 -x -80 -y 80 -defaultsOSRD
+preplace netloc Net 1 0 2 -240 -20 80
+preplace netloc Net1 1 0 2 -240 180 90
+preplace netloc fifos_0_EMPTY 1 1 1 70 80n
+preplace netloc fifos_0_DATA_OUT 1 1 1 80 60n
+preplace netloc data_0_RD_EN 1 0 3 -230 190 NJ 190 390
+levelinfo -pg 1 -260 -80 240 410
+pagesize -pg 1 -db -bbox -sgen -260 -130 410 260
 "
 }
 {

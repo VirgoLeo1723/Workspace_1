@@ -1,39 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1673518205" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/process_data.dcp">
-  <File Type="PA-TCL" Name="data.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="data_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="data_reports.tcl"/>
-  <File Type="RDS-RDS" Name="data.vds"/>
-  <File Type="RDS-UTIL" Name="data_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="data_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="data.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="data_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="data_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1673529177" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/process_data.dcp">
+  <File Type="PA-TCL" Name="fifos.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="fifos_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="fifos_reports.tcl"/>
+  <File Type="RDS-RDS" Name="fifos.vds"/>
+  <File Type="RDS-UTIL" Name="fifos_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="fifos_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="fifos.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="fifos_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="fifos_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/demultiplexer.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/multiplexer.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/process_data.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/data.sv">
-      <FileInfo>
+    <File Path="$PSRCDIR/sources_1/new/multi_fifo.sv">
+      <FileInfo SFType="Verilog">
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -41,14 +20,44 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/fifo.sv">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fifos.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/demultiplexer.sv">
+      <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/multi_fifo.sv">
-      <FileInfo SFType="Verilog">
+    <File Path="$PSRCDIR/sources_1/new/multiplexer.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/process_data.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/data.v">
+      <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -65,7 +74,9 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="data"/>
+      <Option Name="TopModule" Val="fifos"/>
+      <Option Name="TopLib" Val="xil_defaultlib"/>
+      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/new/fifos.v"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
