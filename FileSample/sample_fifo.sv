@@ -21,9 +21,11 @@ module sample_fifo #(
     ,output reg                       o_empty
 );
 
-    logic[FIFO_WIDTH-1:0] wptr, rptr;
-    logic[FIFO_WIDTH-1:0] mark_ptr;
-    logic[FIFO_WIDTH-1:0] pointer_result;
+    localparam LB_FIFO_DEPTH = $clog2(FIFO_DEPTH);
+    
+    logic[LB_FIFO_DEPTH-1:0] wptr, rptr;
+    logic[LB_FIFO_DEPTH-1:0] mark_ptr;
+    logic[LB_FIFO_DEPTH-1:0] pointer_result;
     logic we, re;
     
     assign pointer_result = wptr - rptr;
@@ -33,8 +35,8 @@ module sample_fifo #(
     blk_mem_gen_0 b(
         .clka(clk),
         .clkb(clk),
-        .addra(wptr),
-        .addrb(rptr),
+        .addra(16'(wptr)),
+        .addrb(16'(rptr)),
         .dina(i_rear),
         .doutb(o_front),
         .wea(we)
@@ -49,33 +51,33 @@ module sample_fifo #(
     // MARK
     always_ff @(posedge clk) begin
         if(!rst_n)
-            mark_ptr <= 0;
+            mark_ptr = LB_FIFO_DEPTH'(0);
         else if (i_mark_read_rst)
-            mark_ptr <= rptr;
+            mark_ptr = rptr;
         else
-            mark_ptr <= mark_ptr;
+            mark_ptr = mark_ptr;
     end
     
     // READ
 
     always_ff @(posedge clk) begin
         if(!rst_n || i_flush)
-            rptr <= 0;
+            rptr = LB_FIFO_DEPTH'(0);
         else if (i_read_rst)
-            rptr <= mark_ptr;
+            rptr = mark_ptr;
         else if (re)
-            rptr <= rptr + 1;
+            rptr = rptr + 1;
         else
-            rptr <= rptr;
+            rptr = rptr;
     end
     
     // WRITE
     always_ff @(posedge clk) begin
         if(!rst_n || i_flush)
-            wptr <= 0;
+            wptr = LB_FIFO_DEPTH'(0);
         else if (we)
-            wptr <= wptr + 1;
+            wptr = wptr + 1;
         else
-            wptr <= wptr;
+            wptr = wptr;
     end
 endmodule
