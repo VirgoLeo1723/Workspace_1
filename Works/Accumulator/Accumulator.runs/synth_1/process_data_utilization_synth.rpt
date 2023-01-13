@@ -1,14 +1,14 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Thu Jan 12 23:03:27 2023
+| Date         : Sat Jan 14 01:48:19 2023
 | Host         : DESKTOP-BR8935G running 64-bit major release  (build 9200)
-| Command      : report_utilization -file Accumulator_utilization_synth.rpt -pb Accumulator_utilization_synth.pb
-| Design       : Accumulator
+| Command      : report_utilization -file process_data_utilization_synth.rpt -pb process_data_utilization_synth.pb
+| Design       : process_data
 | Device       : xck26-sfvc784-2LV-c
 | Speed File   : -2LV
 | Design State : Synthesized
------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -32,14 +32,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| CLB LUTs*               |  121 |     0 |          0 |    117120 |  0.10 |
-|   LUT as Logic          |  121 |     0 |          0 |    117120 |  0.10 |
+| CLB LUTs*               |    9 |     0 |          0 |    117120 | <0.01 |
+|   LUT as Logic          |    9 |     0 |          0 |    117120 | <0.01 |
 |   LUT as Memory         |    0 |     0 |          0 |     57600 |  0.00 |
-| CLB Registers           |  184 |     0 |          0 |    234240 |  0.08 |
-|   Register as Flip Flop |  184 |     0 |          0 |    234240 |  0.08 |
-|   Register as Latch     |    0 |     0 |          0 |    234240 |  0.00 |
-| CARRY8                  |    4 |     0 |          0 |     14640 |  0.03 |
-| F7 Muxes                |    9 |     0 |          0 |     58560 |  0.02 |
+| CLB Registers           |    6 |     0 |          0 |    234240 | <0.01 |
+|   Register as Flip Flop |    2 |     0 |          0 |    234240 | <0.01 |
+|   Register as Latch     |    4 |     0 |          0 |    234240 | <0.01 |
+| CARRY8                  |    0 |     0 |          0 |     14640 |  0.00 |
+| F7 Muxes                |    0 |     0 |          0 |     58560 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     29280 |  0.00 |
 | F9 Muxes                |    0 |     0 |          0 |     14640 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
@@ -60,9 +60,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 40    |          Yes |           - |        Reset |
-| 2     |          Yes |         Set |            - |
-| 142   |          Yes |       Reset |            - |
+| 4     |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 2     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -96,7 +96,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| Bonded IOB |  105 |     0 |          0 |       189 | 55.56 |
+| Bonded IOB |   22 |     0 |          0 |       189 | 11.64 |
 +------------+------+-------+------------+-----------+-------+
 
 
@@ -157,20 +157,14 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  142 |            Register |
-| OBUF     |   89 |                 I/O |
-| LUT5     |   42 |                 CLB |
-| FDCE     |   40 |            Register |
-| LUT6     |   38 |                 CLB |
-| LUT2     |   17 |                 CLB |
-| INBUF    |   16 |                 I/O |
-| IBUFCTRL |   16 |              Others |
-| LUT1     |   11 |                 CLB |
-| MUXF7    |    9 |                 CLB |
-| LUT4     |    8 |                 CLB |
-| LUT3     |    8 |                 CLB |
-| CARRY8   |    4 |                 CLB |
-| FDSE     |    2 |            Register |
+| INBUF    |   14 |                 I/O |
+| IBUFCTRL |   14 |              Others |
+| LUT2     |    9 |                 CLB |
+| OBUF     |    8 |                 I/O |
+| LDCE     |    4 |            Register |
+| LUT6     |    3 |                 CLB |
+| LUT1     |    2 |                 CLB |
+| FDRE     |    2 |            Register |
 | BUFGCE   |    1 |               Clock |
 +----------+------+---------------------+
 

@@ -1,14 +1,15 @@
-
-*** Running vivado
-    with args -log process_data.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source process_data.tcl
-
-
-
-****** Vivado v2022.2 (64-bit)
-  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
-  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Jan 14 01:47:03 2023
+# Process ID: 220
+# Current directory: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1
+# Command line: vivado.exe -log process_data.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source process_data.tcl
+# Log file: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1/process_data.vds
+# Journal file: D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.runs/synth_1\vivado.jou
+# Running On: DESKTOP-BR8935G, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 2, Host memory: 8481 MB
+#-----------------------------------------------------------
 source process_data.tcl -notrace
 create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 393.895 ; gain = 71.371
 Command: read_checkpoint -auto_incremental -incremental D:/Study/HK222/PAPER/Practice/Accumulator/Accumulator.srcs/utils_1/imports/synth_1/process_data.dcp

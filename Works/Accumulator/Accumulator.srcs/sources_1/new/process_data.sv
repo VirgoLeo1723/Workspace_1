@@ -39,9 +39,9 @@ module process_data(
 		if (!RESET || index_of_fifo == NO_FIFO)  index_of_fifo <= 0;
 		else index_of_fifo <= index_of_fifo + 1;
 	end
-	always_ff @(posedge CLK) begin
+	always_ff @(index_of_fifo) begin
 		if (!IS_EMPTY[index_of_fifo]) begin
-			RD_EN 	<= 1<<index_of_fifo;
+			RD_EN 	<= (NO_FIFO'(1<<index_of_fifo));
 		end
 	end
 endmodule
