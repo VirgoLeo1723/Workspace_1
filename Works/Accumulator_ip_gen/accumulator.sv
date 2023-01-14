@@ -27,104 +27,106 @@ module accumulator #(
     ,output                           o_rgs_accum_reg_vld // corresponding to a regression register, active as a pulse when this register is updated
 );
 
-	wire [FIFO_WIDTH-1:0] Accum_to_Reg_ [N_LABELS-1:0];
-	wire [FIFO_WIDTH-1:0] Accum_to_Reg_rgs;
+reg [N_LABELS*FIFO_WIDTH-1:0] reg_clf;
+reg	[FIFO_WIDTH-1:0] reg_rgs;
+assign o_clf_accum_reg = reg_clf;
+assign o_rgs_accum_reg = reg_rgs;
 
-	reg [FIFO_WIDTH-1:0] Register_ [N_LABELS-1:0];
-	reg [FIFO_WIDTH-1:0] Register_rgs;
-	
-	reg o_clf_accum_reg_vld_REG [N_LABELS-1:0];
-	reg o_rgs_accum_reg_vld_REG;
-	
-	wire [FIFO_WIDTH:0] i_accum_inst_0_B [N_LABELS-1:0];
-	wire i_accum_inst_0_BYPASS [N_LABELS-1:0];
-	
-	wire [FIFO_WIDTH-1:0] fifo_DATA_OUT;
-	//assign fifo_DATA_OUT = <>;
-	
-	
-	genvar index;
-	
-	
-	
-	
-	
-	
-	for (index = 0; index < N_LABELS; index = index + 1) begin:
-		assign i_accum_inst_0_B[i] = FIFO_WIDTH'b(index+1);
-		assign i_accum_inst_0_BYPASS[i] = 1'b0;
+
+
+
+reg [N_LABELS-1:0] reg_clf_vld;
+reg reg_rgs_vld;
+assign o_clf_accum_reg_vld = reg_clf_vld;
+assign o_rgs_accum_reg_vld = reg_rgs_vld;
+
+
+wire [N_LABELS*FIFO_WIDTH-1:0] accum_clf_to_reg_clf;
+wire [FIFO_WIDTH-1:0] accum_rgs_to_reg_rgs;
+
+
+
+
+wire [N_LABELS-1:0] label;
+demultiplexer demux (
+	 .SELECT ()
+	,.DATA_OUT (label)
+);
+
+
+wire BYPASS_clf;
+wire BYPASS_rgs;
+assign BYPASS_clf = 0;
+assign BYPASS_rgs = 0;
+
+reg [N_LABELS*FIFO_WIDTH-1:0] B_reg_clf;
+reg [FIFO_WIDTH-1:0] B_reg_rgs;
+wire [N_LABELS*FIFO_WIDTH-1:0] B_clf;
+wire [FIFO_WIDTH-1:0] B_rgs;
+reg [FIFO_WIDTH-1:0] i_is_clf_temp;
+reg [FIFO_WIDTH-1:0] label_temp;
+always_comb @(i_is_clf, label) begin
+	i_is_clf_temp = {FIFO_WIDTH{i_is_clf}};
+	for (int i = 0; i < N_LABELS; i = i + 1) begin
+		label_temp = {FIFO_WIDTH{label[i]}};
+		B_reg_clf[FIFO_WIDTH*(i+1):FIFO_WIDTH*i] = FIFO_WIDTH'(i+1) & i_is_clf_temp & label_temp;
 	end
-	
-	for (index = 0; index < N_LABELS; index = index + 1) begin:	
-		ACCUMULATOR c_accum_0 accum_inst_clf (
-			.B(i_accum_inst_0_B[i]),            // input wire [15 : 0] B
-			.CLK(fifo_DATA_OUT[i]*i_is_clf),    // input wire CLK
-			.BYPASS(i_accum_inst_0_BYPASS[i]),  // input wire BYPASS
-			.Q(Accum_to_Reg_[i])                // output wire [15 : 0] Q
+	B_reg_rgs = /*Something*/0 & (~i_is_clf_temp);
+end
+assign B_clf = B_reg_clf;
+assign B_rgs = B_reg_rgs;
+
+
+
+
+genvar index;
+generate
+	for (index = 0; index < N_LABELS; index = index + 1) begin
+		c_accum_0 accum_inst_clf (
+			.B(B_clf[FIFO_WIDTH*(index+1):FIFO_WIDTH*index]),				// input wire [FIFO_WIDTH*(index+1):FIFO_WIDTH*index] B
+			.CLK(clk),														// input wire CLK
+			.BYPASS(BYPASS_clf),											// input wire BYPASS
+			.Q(accum_clf_to_reg_clf[FIFO_WIDTH*(index+1):FIFO_WIDTH*index])	// output wire [FIFO_WIDTH*(index+1):FIFO_WIDTH*index] Q
 		);
 	end
-	
-	c_accum_0 accum_inst_rgs (
-		.B(/*something in here*/),            // input wire [15 : 0] B
-		.CLK(~i_is_clf),   					// input wire CLK
-		.BYPASS(i_accum_inst_0_BYPASS[i]),  // input wire BYPASS
-		.Q(Accum_to_Reg_rgs)                // output wire [15 : 0] Q
-	);
-	
-	
-	
-	
-	
-	
-	always_ff @(posedge clk) begin:
-		if (i_is_accum_fin) begin
-			for (index = 0; index < N_LABEL; index = index + 1) begin:
-				Register_[i] <= Accum_to_Reg_[i];
-			end
-			
-			Register_rgs <= Accum_to_Reg_rgs;
+endgenerate
+c_accum_0 accum_inst_rgs (
+	.B(B_rgs[FIFO_WIDTH*(index+1):FIFO_WIDTH*index]),				// input wire [FIFO_WIDTH*(index+1):FIFO_WIDTH*index] B
+	.CLK(clk),														// input wire CLK
+	.BYPASS(BYPASS_clf),											// input wire BYPASS
+	.Q(accum_rgs_to_reg_rgs[FIFO_WIDTH*(index+1):FIFO_WIDTH*index])	// output wire [FIFO_WIDTH*(index+1):FIFO_WIDTH*index] Q
+);
+
+
+
+always_ff @(posedge clk) begin
+	if (i_is_accum_fin) begin
+		reg_clf <= accum_clf_to_reg_clf;
+		reg_rgs <= accum_rgs_to_reg_rgs;
+
+		for (int i = 0; i < N_LABELS; i = i + 1) begin
+			if (reg_clf_vld[i] == 1) reg_clf_vld[i] <= 0;
+			else reg_clf_vld[i] <= label[i] & i_is_clf;
 		end
+
+		if (reg_rgs_vld == 1) reg_rgs_vld <= 0;
+		else reg_rgs_vld <= ~i_is_clf;
 	end
-	
-	
-	
-	
-	
-	
-	
-	
-	for (index = 0; index < N_LABELS; index = index + 1) begin:	
-		assign o_clf_accum_reg[(i+1)*FIFO_WIDTH-1:FIFO_WIDTH*i] = Register_[i];
-	end
-	
-	assign o_rgs_accum_reg = Register_rgs;
-	
-	
-	
-	
-	
-	
-	always_ff @(posedge clk) begin:
-		for (index = 0; index < N_LABELS; index = index + 1) begin:	
-			if (o_clf_accum_reg_vld_REG[i] == 1'b1) o_clf_accum_reg_vld_REG[i] <= 1'b0;
-			else begin
-				o_clf_accum_reg_vld_REG[i] <= 1'b(fifo_DATA_OUT[i]*i_is_clf);
-			end
-		end
-		
-		o_rgs_accum_reg_vld_REG <= ~i_is_clf;
-	end
+end
 
 
 
 
-	for (index = 0; index < N_LABELS; index = index + 1) begin:	
-		assign o_clf_accum_reg_vld[i] = o_clf_accum_reg_vld_REG;
-	end
+endmodule
+
+
+
+
+module demultiplexer(SELECT, DATA_OUT);
+	parameter	NO_OUTPUT	= 4;
+	parameter	BITS		= 2;
 	
-	assign o_rgs_accum_reg_vld = o_rgs_accum_reg_vld_REG;
-
-
-
-
+	input		[BITS-1:0]			SELECT;
+	output	    [NO_OUTPUT-1:0]	    DATA_OUT;
+	assign	    DATA_OUT = (NO_OUTPUT'(1<<SELECT));
 endmodule
