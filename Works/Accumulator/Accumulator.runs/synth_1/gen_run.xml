@@ -1,45 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1673539204" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/process_data.dcp">
-  <File Type="PA-TCL" Name="Accumulator.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Accumulator_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="Accumulator_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Accumulator.vds"/>
-  <File Type="RDS-UTIL" Name="Accumulator_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Accumulator_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Accumulator.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Accumulator_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Accumulator_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1673635615" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/process_data.dcp">
+  <File Type="PA-TCL" Name="process_data.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="process_data_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="process_data_reports.tcl"/>
+  <File Type="RDS-RDS" Name="process_data.vds"/>
+  <File Type="RDS-UTIL" Name="process_data_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="process_data_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="process_data.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="process_data_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="process_data_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/ip/c_accum_0/c_accum_0.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/multi_fifo.sv">
-      <FileInfo SFType="Verilog">
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/accumulator_label.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/demultiplexer.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/fifo.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -60,8 +32,41 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/fifo.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/c_accum_0/c_accum_0.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/multi_fifo.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/accumulator_label.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/accumulator.sv">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -101,9 +106,9 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Accumulator"/>
+      <Option Name="TopModule" Val="process_data"/>
       <Option Name="TopLib" Val="xil_defaultlib"/>
-      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/new/accumulator.sv"/>
+      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/new/process_data.sv"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
