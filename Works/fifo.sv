@@ -80,28 +80,20 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, is_fifo_empty, is_fifo_full);
    
     always_ff @(posedge clk)
     begin
-        if(!rst_n)
-        begin
-            rd_pt <= 0;
-            wr_pt <= 0;
-        end
-        else
-        begin
-            if(!i_push & re_fifo)
+       if(!i_push & re_fifo)
+       begin
+            rd_pt <= rd_pt + 1;
+            wr_pt <= wr_pt;
+       end
+       if(i_push & i_pop)
+       begin
+            if(is_fifo_full)
             begin
                 rd_pt <= rd_pt + 1;
-                wr_pt <= wr_pt;
             end
-            if(i_push & i_pop)
+            if(is_fifo_empty)
             begin
-                if(is_fifo_full)
-                begin
-                    rd_pt <= rd_pt + 1;
-                end
-                if(is_fifo_empty)
-                begin
-                    wr_pt <= wr_pt + 1;
-                end
+                wr_pt <= wr_pt + 1;
             end
         end
     end
