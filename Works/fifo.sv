@@ -56,7 +56,7 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, is_fifo_empty, is_fifo_full);
         begin
             wr_pt <= 0;
         end
-        else if (we_fifo)
+        else if (we_fifo || (i_push & i_pop & is_fifo_full))
         begin
             ram[wr_pt] <= in_fifo;
             wr_pt <= wr_pt + 1;
@@ -70,31 +70,11 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, is_fifo_empty, is_fifo_full);
         begin
             rd_pt <= 0;
         end
-        else if (re_fifo)
+        else if (re_fifo || (i_push & i_pop & is_fifo_full))
         begin
             out_fifo <= ram[rd_pt];
             rd_pt <= rd_pt + 1;
-        end 
-    end
-    
-   
-    always_ff @(posedge clk)
-    begin
-       if(!i_push & re_fifo)
-       begin
-            rd_pt <= rd_pt + 1;
-            wr_pt <= wr_pt;
-       end
-       if(i_push & i_pop)
-       begin
-            if(is_fifo_full)
-            begin
-                rd_pt <= rd_pt + 1;
-            end
-            if(is_fifo_empty)
-            begin
-                wr_pt <= wr_pt + 1;
-            end
         end
     end
+    
 endmodule
