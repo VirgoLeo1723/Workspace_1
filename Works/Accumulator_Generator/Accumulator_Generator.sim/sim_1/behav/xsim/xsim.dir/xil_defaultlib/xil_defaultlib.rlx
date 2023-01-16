@@ -1,0 +1,8 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/KRIA/Accumulator_Generator/Accumulator_Generator.gen/sources_1/ip/c_accum_0/sim/c_accum_0.vhd,1673853471,vhdl,,,,c_accum_0,,,,,,,,
+D:/KRIA/Accumulator_Generator/Accumulator_Generator.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+D:/KRIA/Accumulator_Generator/Accumulator_Generator.srcs/sim_1/new/testbench.v,1673875051,verilog,,,,testbench,,,,,,,,
+D:/KRIA/Accumulator_Generator/Accumulator_Generator.srcs/sources_1/new/accumulator_gen.v,1673870331,verilog,,D:/KRIA/Accumulator_Generator/Accumulator_Generator.srcs/sim_1/new/testbench.v,,accumulator_gen;demultiplexer;enable_clf;enable_rgs;reg_gen_clf;reg_gen_rgs,,,,,,,,
