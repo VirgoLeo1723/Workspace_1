@@ -19,7 +19,7 @@ module process_data(
 	wire		[WIDTH-1:0]		sample_result;
 	
     multiplexer	inst1   ( 
-                            .SELECT		(index_of_fifo), 
+                            .SELECT		(select), 
                             .DATA_IN	(DATA_IN), 
                             .DATA_OUT	(sample_result)
                         );
@@ -38,6 +38,7 @@ module process_data(
 	always_ff @(posedge CLK) begin
 		if (!RESET || index_of_fifo == NO_FIFO)  index_of_fifo <= 0;
 		else index_of_fifo <= index_of_fifo + 1;
+		select <= index_of_fifo;
 	end
 	always_ff @(index_of_fifo) begin
 		if (!IS_EMPTY[index_of_fifo]) begin

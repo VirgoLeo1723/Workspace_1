@@ -27,25 +27,21 @@ module accumulator #(
     ,output                           o_rgs_accum_reg_vld // corresponding to a regression register, active as a pulse when this register is updated
 );
 
-reg [N_LABELS*FIFO_WIDTH-1:0] reg_clf;
-reg	[FIFO_WIDTH-1:0] reg_rgs;
+
+reg [N_LABELS*FIFO_WIDTH-1:0]   reg_clf;
+reg	[FIFO_WIDTH-1:0]            reg_rgs;
 assign o_clf_accum_reg = reg_clf;
 assign o_rgs_accum_reg = reg_rgs;
 
 
-
-
-reg [N_LABELS-1:0] reg_clf_vld;
-reg reg_rgs_vld;
+reg [N_LABELS-1:0]              reg_clf_vld;
+reg                             reg_rgs_vld;
 assign o_clf_accum_reg_vld = reg_clf_vld;
 assign o_rgs_accum_reg_vld = reg_rgs_vld;
 
 
-wire [N_LABELS*FIFO_WIDTH-1:0] accum_clf_to_reg_clf;
-wire [FIFO_WIDTH-1:0] accum_rgs_to_reg_rgs;
-
-
-
+wire [N_LABELS*FIFO_WIDTH-1:0]  accum_clf_to_reg_clf;
+wire [FIFO_WIDTH-1:0]           accum_rgs_to_reg_rgs;
 
 wire [N_LABELS-1:0] label;
 demultiplexer demux (
@@ -54,17 +50,19 @@ demultiplexer demux (
 );
 
 
-wire BYPASS_clf;
-wire BYPASS_rgs;
+wire                                BYPASS_clf;
+wire                                BYPASS_rgs;
 assign BYPASS_clf = 0;
 assign BYPASS_rgs = 0;
 
-reg [N_LABELS*FIFO_WIDTH-1:0] B_reg_clf;
-reg [FIFO_WIDTH-1:0] B_reg_rgs;
-wire [N_LABELS*FIFO_WIDTH-1:0] B_clf;
-wire [FIFO_WIDTH-1:0] B_rgs;
-reg [FIFO_WIDTH-1:0] i_is_clf_temp;
-reg [FIFO_WIDTH-1:0] label_temp;
+reg     [N_LABELS*FIFO_WIDTH-1:0]   B_reg_clf;
+reg     [FIFO_WIDTH-1:0]            B_reg_rgs;
+
+wire    [N_LABELS*FIFO_WIDTH-1:0]   B_clf;
+wire    [FIFO_WIDTH-1:0]            B_rgs;
+
+reg     [FIFO_WIDTH-1:0]            i_is_clf_temp;
+reg     [FIFO_WIDTH-1:0]            label_temp;
 always_comb @(i_is_clf, label) begin
 	i_is_clf_temp = {FIFO_WIDTH{i_is_clf}};
 	for (int i = 0; i < N_LABELS; i = i + 1) begin
@@ -78,7 +76,7 @@ assign B_rgs = B_reg_rgs;
 
 
 
-
+// accumulator for classification
 genvar index;
 generate
 	for (index = 0; index < N_LABELS; index = index + 1) begin
@@ -90,10 +88,11 @@ generate
 		);
 	end
 endgenerate
+// accumulator for regression
 c_accum_0 accum_inst_rgs (
 	.B(B_rgs[FIFO_WIDTH*(index+1):FIFO_WIDTH*index]),				// input wire [FIFO_WIDTH*(index+1):FIFO_WIDTH*index] B
 	.CLK(clk),														// input wire CLK
-	.BYPASS(BYPASS_clf),											// input wire BYPASS
+	.BYPASS(BYPASS_rgs),											// input wire BYPASS
 	.Q(accum_rgs_to_reg_rgs[FIFO_WIDTH*(index+1):FIFO_WIDTH*index])	// output wire [FIFO_WIDTH*(index+1):FIFO_WIDTH*index] Q
 );
 

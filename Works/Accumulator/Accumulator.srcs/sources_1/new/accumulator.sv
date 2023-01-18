@@ -26,39 +26,39 @@ module Accumulator #(
     ,output [FIFO_WIDTH-1:0]          o_rgs_accum_reg
     ,output                           o_rgs_accum_reg_vld // corresponding to a regression register, active as a pulse when this register is updated
 );
-    logic   [N_DTPS-1:0]            R_EN;
-    logic   [N_DTPS-1:0]            IS_EMPTY;
-    logic   [N_DTPS*FIFO_WIDTH-1:0] FIFO_OUT;
-    logic   [N_LABELS-1:0]          ACCUM_IN;
-   multi_fifo   inst0 (
-                        .CLK        (clk), 
-                        .RESET      (rst_n), 
-                        .I_PUSH     (i_in_fifo_push), 
-                        .I_REAR     (i_in_fifo_rear), 
-                        .I_R_EN     (R_EN), 
-                        .DATA_OUT   (FIFO_OUT), 
-                        .EMPTY      (IS_EMPTY), 
-                        .FULL       (o_in_fifo_is_full)
-                       );
-   process_data inst1 (
-                        .CLK            (clk), 
-                        .RESET          (rst_n), 
-                        .IS_EMPTY       (IS_EMPTY), 
-                        .RD_EN          (R_EN), 
-                        .DATA_IN        (FIFO_OUT), 
-                        .DATA_OUT       (ACCUM_IN)
-                   );
-    accumulator_label  inst2 (
-                        .CLK            (clk), 
-                        .RESET          (rst_n), 
-                        .IS_CLF         (i_is_clf), 
-                        .IS_ACCUM_FIN   (i_is_accum_fin), 
-                        .DATA_IN        (ACCUM_IN), 
-                        .DATA_OUT_CLF   (o_clf_accum_reg),
-                        .DATA_OUT_RGS   (o_rgs_accum_reg),
-                        .CLF_VALID      (o_clf_accum_reg_vld),
-                        .RGS_VALID      (o_rgs_accum_reg_vld)
-                    );
-
-
+    logic   [N_DTPS-1:0]            i_fifo_rd_en;
+    logic   [N_DTPS-1:0]            o_in_fifo_is_empty;
+    logic   [N_DTPS*FIFO_WIDTH-1:0] o_fifo_out;
+    logic   [N_LABELS-1:0]          i_accum_in;
+    
+    
+    
+    fifo_gen multi_fifo (
+                            .clk            (clk), 
+                            .rst_n          (rst_n), 
+                            .in_fifo        (i_in_fifo_rear), 
+                            .out_fifo       (o_fifo_out), 
+                            .i_push         (i_in_fifo_push), 
+                            .i_pop          (i_fifo_rd_en), 
+                            .is_fifo_full   (o_in_fifo_is_full), 
+                            .is_fifo_empty  (o_in_fifo_is_empty)
+                         );
+    process_data distribute_data (
+                            .CLK            (clk), 
+                            .RESET          (rst_n), 
+                            .IS_EMPTY       (o_in_fifo_is_empty), 
+                            .RD_EN          (i_fifo_rd_en), 
+                            .DATA_IN        (o_fifo_out), 
+                            .DATA_OUT       (i_accum_in)
+                         );
+    accumulator_gen multi_accum (
+                            .clk                (clk),
+                            .i_is_clf           (i_is_clf),
+                            .i_is_accum_fin     (i_is_accum_fin),
+                            .label              (i_accum_in),
+                            .o_clf_accum_reg    (o_clf_accum_reg),             
+                            .o_clf_accum_reg_vld(o_clf_accum_reg_vld),
+                            .o_rgs_accum_reg    (o_rgs_accum_reg),
+                            .o_rgs_accum_reg_vld(o_rgs_accum_reg_vld)
+                         );
 endmodule

@@ -1,0 +1,1 @@
+c_accum_1.vhd,vhdl,xil_defaultlib,../../../../Accumulator.gen/sources_1/ip/c_accum_1/sim/c_accum_1.vhd,

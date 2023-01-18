@@ -1,19 +1,10 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.683",
-   "Default View_TopLeft":"0,-26",
+   "Default View_ScaleFactor":"0.857",
+   "Default View_TopLeft":"0,-288",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace inst accum_part_0 -pg 1 -lvl 3 -x 830 -y 100 -defaultsOSRD
-preplace inst data_part_0 -pg 1 -lvl 2 -x 510 -y 170 -defaultsOSRD
-preplace inst fifos_part_0 -pg 1 -lvl 1 -x 190 -y 180 -defaultsOSRD
-preplace netloc Net 1 0 3 20 60 360 60 N
-preplace netloc Net1 1 0 3 30 70 350 70 670
-preplace netloc data_part_0_DATA_OUT 1 2 1 670 140n
-preplace netloc data_part_0_RD_EN 1 0 3 40 80 NJ 80 660
-preplace netloc fifos_part_0_DATA_OUT 1 1 1 340 160n
-preplace netloc fifos_part_0_EMPTY 1 1 1 N 180
 levelinfo -pg 1 0 190 510 830 1000
 pagesize -pg 1 -db -bbox -sgen 0 0 1000 280
 "

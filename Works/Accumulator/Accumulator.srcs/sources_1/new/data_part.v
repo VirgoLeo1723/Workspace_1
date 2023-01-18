@@ -34,7 +34,7 @@ module data_part(
 	input			[NO_FIFO*WIDTH-1:0]		DATA_IN;
 	
 	output			[NO_LABEL-1:0]			DATA_OUT;
-	output reg		[NO_FIFO-1:0]			RD_EN;
+	output     		[NO_FIFO-1:0]			RD_EN;
 	
 	process_data INTS0 (
                             CLK, 
