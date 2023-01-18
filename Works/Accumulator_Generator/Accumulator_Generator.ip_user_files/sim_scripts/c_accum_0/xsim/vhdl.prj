@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../Accumulator_Generator.gen/sources_1/ip/c_accum_0/sim/c_accum_0.vhd" \
+
+nosort
