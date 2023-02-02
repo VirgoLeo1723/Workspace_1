@@ -21,25 +21,48 @@ module sample_fifo #(
     ,output reg                       o_empty
 );
 
-    localparam LB_FIFO_DEPTH = $clog2(FIFO_DEPTH);
+    logic   [FIFO_WIDTH-1:0]            rptr;
+    logic   [FIFO_WIDTH-1:0]            wptr;
+    logic   [FIFO_WIDTH-1:0]            data_in_bram;
+    logic   [FIFO_WIDTH-1:0]            rptr_in_accum;
+    logic   [FIFO_WIDTH-1:0]            wptr_in_accum;
+    logic   [FIFO_WIDTH-1:0]            mark_ptr;
+    logic   [FIFO_WIDTH-1:0]            pointer_result;
     
-    logic[LB_FIFO_DEPTH-1:0] wptr, rptr;
-    logic[LB_FIFO_DEPTH-1:0] mark_ptr;
-    logic[LB_FIFO_DEPTH-1:0] pointer_result;
-    logic we, re;
+    logic   [FIFO_WIDTH-1:0]            Q_rear;
+    
+    logic                               push, count_push;
+    
+    logic                               Q_valid, Q1_valid, Q2_valid;
+
+    logic                               we, re, bypass_rptr, bypass_wptr;
     
     assign pointer_result = wptr - rptr;
     assign re = (~o_empty) & i_pop;
-    assign we = (~o_is_full)&i_push;
+    assign we = (~o_is_full) & push;
     
     blk_mem_gen_0 b(
-        .clka(clk),
-        .clkb(clk),
-        .addra(16'(wptr)),
-        .addrb(16'(rptr)),
-        .dina(i_rear),
-        .doutb(o_front),
-        .wea(we)
+        .clka       (clk),
+        .clkb       (clk),
+        .addra      (wptr),
+        .addrb      (rptr),
+        .dina       (data_in_bram),
+        .doutb      (o_front),
+        .wea        (we)
+    );
+    
+    c_accum_0 count_rptr (
+        .B          (rptr_in_accum),            // input wire [15 : 0] B
+        .CLK        (clk),        // input wire CLK
+        .BYPASS     (bypass_rptr),  // input wire BYPASS
+        .Q          (rptr)            // output wire [15 : 0] Q
+    );
+    
+    c_accum_0 count_wptr (
+        .B          (wptr_in_accum),            // input wire [15 : 0] B
+        .CLK        (clk),        // input wire CLK
+        .BYPASS     (bypass_wptr),  // input wire BYPASS
+        .Q          (wptr)            // output wire [15 : 0] Q
     );
     
     always @(*)
@@ -47,37 +70,96 @@ module sample_fifo #(
         o_is_full = pointer_result == FIFO_DEPTH;
         o_empty = pointer_result == 0;
     end
-
-    // MARK
-    always_ff @(posedge clk) begin
-        if(!rst_n)
-            mark_ptr = LB_FIFO_DEPTH'(0);
-        else if (i_mark_read_rst)
-            mark_ptr = rptr;
+    
+    //align data
+    always @(posedge clk)
+    begin
+        if (!rst_n)
+        begin
+            count_push <= 0;
+        end
         else
-            mark_ptr = mark_ptr;
+        begin
+            if (i_push == 1)
+            begin
+                push <= 1;
+                count_push <= 1;
+            end
+            else
+            begin
+                count_push <= count_push - 1;
+                if (count_push == 0)
+                begin
+                    push <= i_push;
+                end
+                else
+                begin
+                    push <= push;
+                end
+            end
+               
+            Q_rear <= i_rear;
+            data_in_bram <= Q_rear;
+            
+            Q1_valid <= re;
+            Q2_valid <= Q1_valid;
+            Q_valid <= Q2_valid;
+            o_vld <= Q_valid;
+        end
     end
     
-    // READ
-
+    //mark
+    always_ff @(posedge clk) begin
+        if(!rst_n)
+            mark_ptr <= 0;
+        else
+            if (i_mark_read_rst)
+                mark_ptr <= rptr - 1;
+            else
+                mark_ptr <= mark_ptr;
+    end
+    
+    // read
     always_ff @(posedge clk) begin
         if(!rst_n || i_flush)
-            rptr = LB_FIFO_DEPTH'(0);
-        else if (i_read_rst)
-            rptr = mark_ptr;
-        else if (re)
-            rptr = rptr + 1;
+        begin
+            rptr_in_accum <= 0;
+            bypass_rptr <= 1;
+        end
         else
-            rptr = rptr;
+            if (i_read_rst)
+            begin
+                rptr_in_accum <= mark_ptr;
+                bypass_rptr <= 1;
+            end
+            else 
+                if (re)
+                begin
+                    rptr_in_accum <= 1;
+                    bypass_rptr <= 0;
+                end
+                else
+                begin
+                    rptr_in_accum <= 0;
+                    bypass_rptr <= 0;
+                end
     end
     
     // WRITE
     always_ff @(posedge clk) begin
-        if(!rst_n || i_flush)
-            wptr = LB_FIFO_DEPTH'(0);
-        else if (we)
-            wptr = wptr + 1;
-        else
-            wptr = wptr;
+        if(!rst_n || i_flush) begin
+            wptr_in_accum <= 0;
+            bypass_wptr <= 1;
+        end
+        else 
+            if (i_push) begin
+                wptr_in_accum <= 1;
+                bypass_wptr <= 0;
+            end
+            else begin
+                wptr_in_accum <= 0;
+                bypass_wptr <= 0;
+            end
     end
+    
 endmodule
