@@ -59,7 +59,7 @@ module accumulator_label (CLK, RESET, IS_CLF, IS_ACCUM_FIN, DATA_IN, DATA_OUT_CL
         end
     end
     
-    c_accum_0 INST1 (
+    c_accum_1 INST1 (
                       .B    (DATA_IN_RGS),        // input wire [0 : 0] B
                       .CLK  (CLK),    // input wire CLK
                       .SCLR (SCLR),  // input wire SCLR

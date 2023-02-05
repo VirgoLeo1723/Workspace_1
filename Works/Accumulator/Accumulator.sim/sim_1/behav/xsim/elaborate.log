@@ -1,19 +1,47 @@
 Vivado Simulator v2022.2
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot process_data_behav xil_defaultlib.process_data xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_10 -L c_reg_fd_v12_0_6 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_pipe_v3_0_6 -L xbip_dsp48_addsub_v3_0_6 -L xbip_addsub_v3_0_6 -L c_addsub_v12_0_14 -L xbip_dsp48_acc_v3_0_6 -L xbip_accum_v3_0_6 -L c_accum_v12_0_14 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot accmulator_tb_behav xil_defaultlib.accmulator_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv" Line 1. Module multiplexer(NO_INPUT=4,BITS=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/demultiplexer.sv" Line 1. Module demultiplexer(NO_OUTPUT=4,BITS=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/multiplexer.sv" Line 1. Module multiplexer(NO_INPUT=4,BITS=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Study/HK221/PAPER/Practice/Accumulator/Accumulator.srcs/sources_1/new/demultiplexer.sv" Line 1. Module demultiplexer(NO_OUTPUT=4,BITS=2) doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.multiplexer(NO_INPUT=4,BITS=2)
-Compiling module xil_defaultlib.demultiplexer(NO_OUTPUT=4,BITS=2...
-Compiling module xil_defaultlib.process_data
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package c_accum_v12_0_14.c_accum_v12_0_14_viv_comp
+Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
+Compiling package xbip_accum_v3_0_6.xbip_accum_v3_0_6_viv_comp
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package xbip_accum_v3_0_6.xbip_accum_v3_0_6_pkg
+Compiling package c_accum_v12_0_14.c_accum_v12_0_14_pkg
+Compiling package c_addsub_v12_0_14.c_addsub_v12_0_14_pkg_legacy
+Compiling package c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv_comp
+Compiling package c_addsub_v12_0_14.c_addsub_v12_0_14_pkg
+Compiling package unisim.vcomponents
+Compiling module xil_defaultlib.fifo
+Compiling module xil_defaultlib.fifo_gen_default
+Compiling module xil_defaultlib.enable_clf
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=16...]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture struct of entity c_accum_v12_0_14.c_accum_v12_0_14_fabric_legacy [\c_accum_v12_0_14_fabric_legacy(...]
+Compiling architecture rtl of entity c_accum_v12_0_14.c_accum_v12_0_14_legacy [\c_accum_v12_0_14_legacy(c_famil...]
+Compiling architecture synth of entity c_accum_v12_0_14.c_accum_v12_0_14_viv [\c_accum_v12_0_14_viv(c_xdevicef...]
+Compiling architecture xilinx of entity c_accum_v12_0_14.c_accum_v12_0_14 [\c_accum_v12_0_14(c_xdevicefamil...]
+Compiling architecture c_accum_1_arch of entity xil_defaultlib.c_accum_1 [c_accum_1_default]
+Compiling module xil_defaultlib.reg_gen_clf
+Compiling module xil_defaultlib.enable_rgs
+Compiling module xil_defaultlib.reg_gen_rgs
+Compiling module xil_defaultlib.accumulator_gen_default
+Compiling module xil_defaultlib.Accumulator
+Compiling module xil_defaultlib.accmulator_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot process_data_behav
+Built simulation snapshot accmulator_tb_behav

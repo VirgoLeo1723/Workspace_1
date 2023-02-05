@@ -56,6 +56,7 @@ COMPONENT c_accum_1
     B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     CLK : IN STD_LOGIC;
     BYPASS : IN STD_LOGIC;
+    SCLR : IN STD_LOGIC;
     Q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
   );
 END COMPONENT;
@@ -70,6 +71,7 @@ your_instance_name : c_accum_1
     B => B,
     CLK => CLK,
     BYPASS => BYPASS,
+    SCLR => SCLR,
     Q => Q
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------

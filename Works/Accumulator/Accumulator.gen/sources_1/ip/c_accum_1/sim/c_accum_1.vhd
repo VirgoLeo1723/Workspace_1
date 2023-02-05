@@ -61,6 +61,7 @@ ENTITY c_accum_1 IS
     B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     CLK : IN STD_LOGIC;
     BYPASS : IN STD_LOGIC;
+    SCLR : IN STD_LOGIC;
     Q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END c_accum_1;
@@ -114,6 +115,8 @@ ARCHITECTURE c_accum_1_arch OF c_accum_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA undef";
   ATTRIBUTE X_INTERFACE_INFO OF Q: SIGNAL IS "xilinx.com:signal:data:1.0 q_intf DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF SCLR: SIGNAL IS "XIL_INTERFACENAME sclr_intf, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF SCLR: SIGNAL IS "xilinx.com:signal:reset:1.0 sclr_intf RST";
 BEGIN
   U0 : c_accum_v12_0_14
     GENERIC MAP (
@@ -128,7 +131,7 @@ BEGIN
       C_HAS_C_IN => 0,
       C_HAS_CE => 0,
       C_HAS_BYPASS => 1,
-      C_HAS_SCLR => 0,
+      C_HAS_SCLR => 1,
       C_LATENCY => 1,
       C_SCALE => 0,
       C_AINIT_VAL => "0",
@@ -145,7 +148,7 @@ BEGIN
       C_IN => '0',
       CE => '1',
       BYPASS => BYPASS,
-      SCLR => '0',
+      SCLR => SCLR,
       SSET => '0',
       SINIT => '0',
       Q => Q

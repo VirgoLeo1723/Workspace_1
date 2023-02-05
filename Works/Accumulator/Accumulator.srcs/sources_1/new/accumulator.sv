@@ -4,6 +4,7 @@ module Accumulator #(
      parameter N_DTPS     = 4 // number of DTPs (in other word, number of input FIFO)
     ,parameter FIFO_WIDTH = 16
     ,parameter N_LABELS   = 4 // number of label for classification problem
+    ,parameter   BITS = 2
 ) (
      input                            clk
     ,input                            rst_n
@@ -27,7 +28,7 @@ module Accumulator #(
     ,output                           o_rgs_accum_reg_vld // corresponding to a regression register, active as a pulse when this register is updated
 );
     logic   [N_DTPS-1:0]            i_fifo_rd_en;
-    logic   [N_DTPS-1:0]            o_in_fifo_is_empty;
+    logic   [N_DTPS-1:0]            o_in_fifo_is_empty /*keep synthesis*/;
     logic   [N_DTPS*FIFO_WIDTH-1:0] o_fifo_out;
     logic   [N_LABELS-1:0]          i_accum_in;
     
@@ -43,14 +44,30 @@ module Accumulator #(
                             .is_fifo_full   (o_in_fifo_is_full), 
                             .is_fifo_empty  (o_in_fifo_is_empty)
                          );
-    process_data distribute_data (
-                            .CLK            (clk), 
-                            .RESET          (rst_n), 
-                            .IS_EMPTY       (o_in_fifo_is_empty), 
-                            .RD_EN          (i_fifo_rd_en), 
-                            .DATA_IN        (o_fifo_out), 
-                            .DATA_OUT       (i_accum_in)
-                         );
+    // Distribute Label
+    reg			[BITS-1:0]		      index_of_fifo;
+	reg		    [BITS-1:0]		      select;
+	wire        [BITS-1:0]            label_out;
+	reg         [N_DTPS-1:0]          is_select_empty; 
+    always_ff @(posedge clk) begin
+        if (!rst_n || index_of_fifo == N_DTPS) index_of_fifo <= 0;
+        else index_of_fifo  <= index_of_fifo + 1;
+        select              <= index_of_fifo;
+        is_select_empty     <= o_in_fifo_is_empty;
+    end
+    always_comb begin
+        if (!rst_n) i_fifo_rd_en = 0;
+        else begin
+            if (o_in_fifo_is_empty[index_of_fifo]==1'b0) 
+                i_fifo_rd_en = (N_DTPS'(1<<index_of_fifo));
+            else
+                i_fifo_rd_en = (N_DTPS'(0<<index_of_fifo));
+        end
+    end
+    assign label_out    = (BITS'(o_fifo_out[select*FIFO_WIDTH+:FIFO_WIDTH])) & {BITS{~is_select_empty[select]}};
+    assign i_accum_in   = (N_LABELS'((1 & ~is_select_empty[select]) << label_out));
+    
+    // Accumulate Label
     accumulator_gen multi_accum (
                             .clk                (clk),
                             .i_is_clf           (i_is_clf),

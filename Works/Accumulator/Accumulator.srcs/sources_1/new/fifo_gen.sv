@@ -27,7 +27,7 @@ module fifo_gen(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_full, is_f
 	input		clk, rst_n; 
 	input       [N_DTPS*FIFO_WIDTH-1:0] in_fifo;      //i_in_fifo_rear
     output reg  [N_DTPS*FIFO_WIDTH-1:0] out_fifo;
-    input       [N_DTPS-1:0] i_push, i_pop;                  //i_in_fifo_push
+    input       [N_DTPS-1:0] i_push,i_pop;                  //i_in_fifo_push
 	output      [N_DTPS-1:0] is_fifo_full;
 	output      [N_DTPS-1:0] is_fifo_empty;
 	
@@ -50,4 +50,3 @@ module fifo_gen(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_full, is_f
 		end
 	endgenerate
 endmodule
-

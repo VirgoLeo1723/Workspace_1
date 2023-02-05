@@ -40,9 +40,12 @@ module process_data(
 		else index_of_fifo <= index_of_fifo + 1;
 		select <= index_of_fifo;
 	end
-	always_ff @(index_of_fifo) begin
+	always_comb begin
 		if (!IS_EMPTY[index_of_fifo]) begin
-			RD_EN 	<= (NO_FIFO'(1<<index_of_fifo));
+			RD_EN 	= (NO_FIFO'(1<<index_of_fifo));
+		end
+		else begin
+            RD_EN   = (NO_FIFO'(1'b0));   
 		end
 	end
 endmodule

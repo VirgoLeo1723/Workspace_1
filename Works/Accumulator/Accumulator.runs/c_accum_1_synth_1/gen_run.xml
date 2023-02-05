@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="c_accum_1_synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1673978521">
+<GenRun Id="c_accum_1_synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1675165149">
   <File Type="PA-TCL" Name="c_accum_1.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="c_accum_1_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="c_accum_1_reports.tcl"/>
   <File Type="RDS-RDS" Name="c_accum_1.vds"/>
   <File Type="RDS-UTIL" Name="c_accum_1_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="c_accum_1_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="c_accum_1.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="c_accum_1_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="c_accum_1_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/c_accum_1">
     <File Path="$PSRCDIR/sources_1/ip/c_accum_1/c_accum_1.xci">
       <FileInfo>
@@ -50,9 +47,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
