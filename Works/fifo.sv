@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module fifo(clk, rst_n, in_fifo, out_fifo, i_push, is_fifo_empty, is_fifo_full);
+module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_empty, is_fifo_full);
     parameter FIFO_WIDTH    = 16;
     parameter FIFO_DEPTH    = 8;
     parameter BIT_WIDTH     = 4; 
@@ -31,11 +31,11 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, is_fifo_empty, is_fifo_full);
     input       i_pop;
     input       [FIFO_WIDTH-1:0] in_fifo;
     output reg  [FIFO_WIDTH-1:0] out_fifo;
-    output      is_fifo_empty;
-    output      is_fifo_full;
+    output reg     is_fifo_empty;
+    output reg     is_fifo_full;
     
     logic [FIFO_WIDTH-1:0] ram [FIFO_DEPTH-1:0];
-    logic [BIT_WIDTH-1:0] rd_pt, wr_pt;
+    logic [BIT_WIDTH-1:0] rd_pt, wr_pt, pt_run;
     logic re_fifo, we_fifo;
    
     assign pt_run   = wr_pt - rd_pt;
@@ -52,7 +52,7 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, is_fifo_empty, is_fifo_full);
     //----------------------------WRITE: LOAD DATA FROM DTP TO FIFO--------------------------//
     always_ff @(posedge clk)
     begin
-        if(!rst_n)
+        if(!rst_n || wr_pt == FIFO_DEPTH)
         begin
             wr_pt <= 0;
         end
@@ -66,11 +66,11 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, is_fifo_empty, is_fifo_full);
     //-------------------------------READ: LOAD DATA FROM FIFO TO MUX------------------------------//
     always_ff @(posedge clk)
     begin
-        if(!rst_n)
+        if(!rst_n || rd_pt == FIFO_DEPTH)
         begin
             rd_pt <= 0;
         end
-        else if (re_fifo || (i_push & i_pop & is_fifo_full))
+        else if (re_fifo || (i_push & i_pop & is_fifo_empty))
         begin
             out_fifo <= ram[rd_pt];
             rd_pt <= rd_pt + 1;
