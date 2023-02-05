@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 01/13/2023 04:44:49 PM
+// Create Date: 02/02/2023 02:05:18 PM
 // Design Name: 
-// Module Name: fifo_gen
+// Module Name: multi_fifo
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -26,23 +26,23 @@ module fifo_gen(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_full, is_f
 	
 	input		clk, rst_n; 
 	input       [N_DTPS*FIFO_WIDTH-1:0] in_fifo;      //i_in_fifo_rear
-    output reg  [N_DTPS*FIFO_WIDTH-1:0] out_fifo;
+    output      [N_DTPS*FIFO_WIDTH-1:0] out_fifo;
     input       [N_DTPS-1:0] i_push;                  //i_in_fifo_push
+    input       [N_DTPS-1:0] i_pop;
 	output      [N_DTPS-1:0] is_fifo_full;
 	output      [N_DTPS-1:0] is_fifo_empty;
 	
 	// generate instance for counter
 	// in this example i tried to create 5 counter connected serially
 	// after previous counter count to MAX value, it allow the next counter start to count
-	genvar 	index;
 	generate 
-		for (index=0; index<N_DTPS; index=index+1) begin : FIFO
-			fifo INST0 (
+		for (genvar index=0; index<N_DTPS; index=index+1) begin : FIFO
+			fifo ins (
 						.clk		   (clk), 
 						.rst_n	       (rst_n), 
-						.in_fifo	   (in_fifo[(index+1)*FIFO_WIDTH-1:index*FIFO_WIDTH]),
-						.out_fifo	   (out_fifo[(index+1)*FIFO_WIDTH-1:index*FIFO_WIDTH]),
-						.i_push	       (i_push[index),
+						.in_fifo	   (in_fifo[index*FIFO_WIDTH  +: FIFO_WIDTH]),
+						.out_fifo	   (out_fifo[index*FIFO_WIDTH +: FIFO_WIDTH]),
+						.i_push	       (i_push[index]),
 						.i_pop         (i_pop[index]),
 						.is_fifo_full  (is_fifo_full[index]),
 						.is_fifo_empty (is_fifo_empty[index])
