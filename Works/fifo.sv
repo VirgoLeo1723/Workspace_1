@@ -52,7 +52,7 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_empty, is_fifo
     //----------------------------WRITE: LOAD DATA FROM DTP TO FIFO--------------------------//
     always_ff @(posedge clk)
     begin
-        if(!rst_n || wr_pt == FIFO_DEPTH)
+        if(!rst_n || wr_pt == FIFO_DEPTH || i_flush)
         begin
             wr_pt <= 0;
         end
@@ -66,7 +66,7 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_empty, is_fifo
     //-------------------------------READ: LOAD DATA FROM FIFO TO MUX------------------------------//
     always_ff @(posedge clk)
     begin
-        if(!rst_n || rd_pt == FIFO_DEPTH)
+        if(!rst_n || rd_pt == FIFO_DEPTH || i_flush)
         begin
             rd_pt <= 0;
         end
