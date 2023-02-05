@@ -75,6 +75,6 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_empty, is_fifo
             out_fifo <= ram[rd_pt];
             rd_pt <= rd_pt + 1;
         end
-    end
+    end 
     
 endmodule
