@@ -66,6 +66,7 @@ module accumulator_gen #(
             );
 
             reg_gen_clf INST3 (
+                .rst_n          (rst_n),
                 .clk            (clk),
                 .i_is_accum_fin (i_is_accum_fin),
                 .label          (label[index]),
@@ -101,6 +102,7 @@ module accumulator_gen #(
         .Q      (Q_accum_to_reg_rgs)
     );
     reg_gen_rgs INST6 (
+        .rst_n          (rst_n),
         .clk            (clk),
         .i_is_accum_fin (i_is_accum_fin),
         .i_is_clf       (i_is_clf),
@@ -156,6 +158,7 @@ endmodule
 module reg_gen_clf #(
 	parameter						FIFO_WIDTH	= 16
 ) (
+    input                           rst_n;
 	input							clk,
 	input							i_is_accum_fin,
 	input							label,
@@ -166,12 +169,17 @@ module reg_gen_clf #(
 	output	reg						clf_vld,
 	output	reg	[FIFO_WIDTH-1:0]	clf_out
 );
-	always @(posedge clk) begin 
-        if (clf_vld == 1) clf_vld <= 0;
-		if (i_is_accum_fin) begin
-			clf_out <= Q_in;
-			clf_vld <= label & i_is_clf;
-		end
+	always @(posedge clk) begin
+        if (rst_n == 0) begin
+            clf_out <= 0;
+			clf_vld <= 0;
+        end else begin
+            if (clf_vld == 1) clf_vld <= 0;
+            if (i_is_accum_fin) begin
+                clf_out <= Q_in;
+                clf_vld <= label & i_is_clf;
+            end
+        end
 	end
 endmodule
 
@@ -181,6 +189,7 @@ endmodule
 module reg_gen_rgs #(
 	parameter						FIFO_WIDTH	= 16
 ) (
+    input                           rst_n;
 	input							clk,
 	input							i_is_accum_fin,
 	input							i_is_clf,
@@ -191,10 +200,15 @@ module reg_gen_rgs #(
 	output	reg	[FIFO_WIDTH-1:0]	rgs_out
 );
 	always @(posedge clk) begin 
-        if (rgs_vld == 1) rgs_vld <= 0;
-		if (i_is_accum_fin) begin
-			rgs_out <= Q_in;
-			rgs_vld <= ~i_is_clf;
-		end
+        if (rst_n == 0) begin
+            rgs_out <= 0;
+            rgs_vld <= 0;
+        end else begin
+            if (rgs_vld == 1) rgs_vld <= 0;
+            if (i_is_accum_fin) begin
+                rgs_out <= Q_in;
+                rgs_vld <= ~i_is_clf;
+            end
+        end
 	end
 endmodule
