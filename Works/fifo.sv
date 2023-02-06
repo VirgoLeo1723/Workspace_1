@@ -49,7 +49,6 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, i_flush, is_fifo_empty
         if (wr_pt > rd_pt) pt_run = wr_pt - rd_pt;
         else pt_run = rd_pt - wr_pt;
     end
-    
     always @(*)
     begin
        
@@ -59,11 +58,11 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, i_flush, is_fifo_empty
     //----------------------------WRITE: LOAD DATA FROM DTP TO FIFO--------------------------//
     always_ff @(posedge clk)
     begin
-        if(!rst_n || wr_pt == FIFO_DEPTH)
+        if(!rst_n || wr_pt == FIFO_DEPTH || i_flush)
         begin
             wr_pt <= 0;
         end
-        else if (we_fifo || (i_push & i_pop & is_fifo_full))
+        else if (we_fifo || (i_push & i_pop & is_fifo_empty))
         begin
             ram[wr_pt] <= in_fifo;
             wr_pt <= wr_pt + 1;
@@ -73,11 +72,11 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, i_flush, is_fifo_empty
     //-------------------------------READ: LOAD DATA FROM FIFO TO MUX------------------------------//
     always_ff @(posedge clk)
     begin
-        if(!rst_n || rd_pt == FIFO_DEPTH - 1)
+        if(!rst_n || rd_pt == FIFO_DEPTH-1 || i_flush)
         begin
             rd_pt <= 0;
         end
-        else if (re_fifo || (i_push & i_pop & is_fifo_empty))
+        else if (re_fifo || (i_push & i_pop & is_fifo_full))
         begin
             out_fifo <= ram[rd_pt];
             rd_pt <= rd_pt + 1;
