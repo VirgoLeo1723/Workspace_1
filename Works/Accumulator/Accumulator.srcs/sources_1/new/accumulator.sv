@@ -41,22 +41,29 @@ module Accumulator #(
                             .out_fifo       (o_fifo_out), 
                             .i_push         (i_in_fifo_push), 
                             .i_pop          (i_fifo_rd_en), 
+                            .i_flush        (i_flush),
                             .is_fifo_full   (o_in_fifo_is_full), 
                             .is_fifo_empty  (o_in_fifo_is_empty)
                          );
     // Distribute Label
     reg			[BITS-1:0]		      index_of_fifo;
 	reg		    [BITS-1:0]		      select;
-	wire        [BITS-1:0]            label_out;
+	logic        [BITS-1:0]            label_out;
 	reg         [N_DTPS-1:0]          is_select_empty; 
     always_ff @(posedge clk) begin
         if (!rst_n || index_of_fifo == N_DTPS) index_of_fifo <= 0;
         else index_of_fifo  <= index_of_fifo + 1;
-        select              <= index_of_fifo;
-        is_select_empty     <= o_in_fifo_is_empty;
+        if (i_is_accum_fin) begin
+            select          <= 0;
+            is_select_empty <= {N_DTPS{1'b1}};
+        end
+        else begin
+            select          <= index_of_fifo;
+            is_select_empty <= o_in_fifo_is_empty;
+        end
     end
     always_comb begin
-        if (!rst_n) i_fifo_rd_en = 0;
+        if (!rst_n || i_is_accum_fin == 1'b1) i_fifo_rd_en =(BITS'(0));
         else begin
             if (o_in_fifo_is_empty[index_of_fifo]==1'b0) 
                 i_fifo_rd_en = (N_DTPS'(1<<index_of_fifo));
@@ -64,12 +71,19 @@ module Accumulator #(
                 i_fifo_rd_en = (N_DTPS'(0<<index_of_fifo));
         end
     end
-    assign label_out    = (BITS'(o_fifo_out[select*FIFO_WIDTH+:FIFO_WIDTH])) & {BITS{~is_select_empty[select]}};
-    assign i_accum_in   = (N_LABELS'((1 & ~is_select_empty[select]) << label_out));
+   
+    assign label_out    = (BITS'(o_fifo_out[select*FIFO_WIDTH+:FIFO_WIDTH])) 
+                     & {BITS{~is_select_empty[select] & ~i_is_accum_fin}};
+                         
+    assign i_accum_in   = (N_LABELS'((1 & ~is_select_empty[select]) << label_out))
+                     & {N_LABELS{~is_select_empty[select]& ~i_is_accum_fin}};
+    
+
     
     // Accumulate Label
     accumulator_gen multi_accum (
                             .clk                (clk),
+                            .rst_n              (rst_n),
                             .i_is_clf           (i_is_clf),
                             .i_is_accum_fin     (i_is_accum_fin),
                             .label              (i_accum_in),

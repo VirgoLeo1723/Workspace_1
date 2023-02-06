@@ -28,6 +28,7 @@ module accumulator_gen #(
 	parameter                           BITS        = 2
 ) (
     input                               clk,
+    input                               rst_n,
     input                               i_is_clf,
     input                               i_is_accum_fin,
 
@@ -45,8 +46,9 @@ module accumulator_gen #(
     wire    [FIFO_WIDTH-1:0]    B_gen_to_en_clf;
     wire    [FIFO_WIDTH-1:0]    B_en_to_accum_clf     [0:N_LABEL-1];
     wire    [FIFO_WIDTH-1:0]    Q_accum_to_reg_clf    [0:N_LABEL-1];
-    assign BYPASS_in = 0;
-    assign B_gen_to_en_clf = 1;
+    assign BYPASS_in        = 0 || ~rst_n;
+    assign B_gen_to_en_clf  = 1 ||  rst_n;
+    
     genvar index;
     generate
         for (index = 0; index < N_LABEL; index = index + 1) begin
@@ -66,8 +68,8 @@ module accumulator_gen #(
             );
 
             reg_gen_clf INST3 (
-                .rst_n          (rst_n),
                 .clk            (clk),
+                .rst_n          (rst_n),
                 .i_is_accum_fin (i_is_accum_fin),
                 .label          (label[index]),
                 .i_is_clf       (i_is_clf),
@@ -84,8 +86,15 @@ module accumulator_gen #(
     wire    [FIFO_WIDTH-1:0]    Q_accum_to_reg_rgs;
     integer pos;
     always @(*) begin
-        for (pos=0; pos<N_LABEL; pos=pos+1) begin
-            if (label[pos]==1'b1) B_gen_to_en_rgs = label + 1;        
+        if (!rst_n)
+            B_gen_to_en_rgs = 0;
+        else begin
+            if (label==0) B_gen_to_en_rgs = 0;
+            else begin
+                for (pos=0; pos<N_LABEL; pos=pos+1) begin
+                    if (label[pos]==1'b1) B_gen_to_en_rgs = pos + 1;        
+                end
+            end
         end
     end
     
@@ -102,8 +111,8 @@ module accumulator_gen #(
         .Q      (Q_accum_to_reg_rgs)
     );
     reg_gen_rgs INST6 (
-        .rst_n          (rst_n),
         .clk            (clk),
+        .rst_n          (rst_n),
         .i_is_accum_fin (i_is_accum_fin),
         .i_is_clf       (i_is_clf),
         .Q_in           (Q_accum_to_reg_rgs),
@@ -158,7 +167,7 @@ endmodule
 module reg_gen_clf #(
 	parameter						FIFO_WIDTH	= 16
 ) (
-    input                           rst_n;
+    input                           rst_n,
 	input							clk,
 	input							i_is_accum_fin,
 	input							label,
@@ -189,7 +198,7 @@ endmodule
 module reg_gen_rgs #(
 	parameter						FIFO_WIDTH	= 16
 ) (
-    input                           rst_n;
+    input                           rst_n,
 	input							clk,
 	input							i_is_accum_fin,
 	input							i_is_clf,

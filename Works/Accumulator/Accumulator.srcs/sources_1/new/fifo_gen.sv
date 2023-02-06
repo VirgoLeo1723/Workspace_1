@@ -20,14 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module fifo_gen(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_full, is_fifo_empty);
+module fifo_gen(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, i_flush, is_fifo_full, is_fifo_empty);
 	parameter	N_DTPS 	     = 4;
 	parameter	FIFO_WIDTH 	 = 16;
 	
 	input		clk, rst_n; 
 	input       [N_DTPS*FIFO_WIDTH-1:0] in_fifo;      //i_in_fifo_rear
     output reg  [N_DTPS*FIFO_WIDTH-1:0] out_fifo;
-    input       [N_DTPS-1:0] i_push,i_pop;                  //i_in_fifo_push
+    input       [N_DTPS-1:0] i_push,i_pop;
+    input                    i_flush;                  
 	output      [N_DTPS-1:0] is_fifo_full;
 	output      [N_DTPS-1:0] is_fifo_empty;
 	
@@ -44,6 +45,7 @@ module fifo_gen(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, is_fifo_full, is_f
 						.out_fifo	   (out_fifo[(index+1)*FIFO_WIDTH-1:index*FIFO_WIDTH]),
 						.i_push	       (i_push[index]),
 						.i_pop         (i_pop[index]),
+						.i_flush       (i_flush),
 						.is_fifo_full  (is_fifo_full[index]),
 						.is_fifo_empty (is_fifo_empty[index])
 						);

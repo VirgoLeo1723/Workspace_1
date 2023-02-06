@@ -62,26 +62,55 @@ module accmulator_tb #(
                          );
     initial begin
         clk             = 0;
-        rst_n           = 0;
-        i_flush         = 0;
-        i_is_clf        = 0;
+        
         i_is_accum_fin  = 0;
-        i_in_fifo_push  = 4'b1111;
-        #4 i_in_fifo_push = 4'b0000;
         i_in_fifo_rear  = 0;
     end
+    // i_flush
+    initial begin
+        i_flush         = 0;
+//        #8 i_flush      = 1;
+//        #4 i_flush      = 0;
+    end
+    // rst_n 
+    initial begin
+        rst_n           = 0;
+        #2 rst_n        = 1;
+        #20 rst_n       = 0;
+        #2 rst_n        = 1;
+        #110 rst_n      = 0;
+        #2 rst_n        = 1;
+    end
+    // i_in_fifo_push
+    initial begin
+        i_in_fifo_push  = 4'b1111;
+        #4  i_in_fifo_push = 4'b0000;
+        #30 i_in_fifo_push = 4'b1101;
+        #2 i_in_fifo_push = 4'b0000;
+        #60 i_in_fifo_push = 4'b1010;
+        #2 i_in_fifo_push = 4'b0000;   
+    end
+    // i_is_clf
+    initial begin
+        i_is_clf        = 0;
+        
+        #1   i_is_clf     = 1;
+        #100 i_is_clf    = 0;
+    end
+    // input
+    initial begin
+            i_in_fifo_rear <= 64'h0000000300030002;
+        #29 i_in_fifo_rear <= 64'h0001000200030000;
+        #59 i_in_fifo_rear <= 64'h0000000000010000; 
+    end
+    
     always begin
         #1; 
         clk              <= ~clk;
-        i_is_clf         <= 1;
-        i_in_fifo_rear   <= 64'h0000000300030002;
+        
     end
     always begin
-        #2;
-        rst_n           <= 1;
-    end
-    always begin
-        #11;
+        #13;
         i_is_accum_fin  <= ~i_is_accum_fin;
     end
     
