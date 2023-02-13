@@ -34,13 +34,15 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, i_flush, is_fifo_empty
     output reg  [FIFO_WIDTH-1:0] out_fifo;
     output reg     is_fifo_empty;
     output reg     is_fifo_full;
-    
+   
     logic [FIFO_WIDTH-1:0] ram [FIFO_DEPTH-1:0];
     logic [BIT_WIDTH:0] rd_pt, wr_pt;
     logic re_fifo, we_fifo;
+    logic is_fifo_available;
     //assign pt_run   = (wr_pt > rd_pt) ? wr_pt - rd_pt : rd_pt - wr_pt;
-    assign re_fifo  = (~is_fifo_empty) & i_pop;
-    assign we_fifo  = (~is_fifo_full) & i_push;
+    assign re_fifo      = (~is_fifo_empty) & i_pop;
+    assign we_fifo      = (~is_fifo_full) & i_push;
+    assign is_fifo_available = (~is_fifo_empty) & (~is_fifo_full);
     
     //-------------------------------------THRESHOLD-----------------------------------------//
     always @(*)
@@ -51,15 +53,19 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, i_flush, is_fifo_empty
     //----------------------------WRITE: LOAD DATA FROM DTP TO FIFO--------------------------//
     always_ff @(posedge clk)
     begin
-        if(!rst_n  || i_flush)
+        if(!rst_n  || i_flush )
         begin
             wr_pt <= 0;
         end
-        else if (we_fifo || (i_push & i_pop & is_fifo_empty))
+        else if (we_fifo || (i_push & i_pop & is_fifo_empty) || (i_push & i_pop & is_fifo_available))
         begin
-            ram[wr_pt] <= in_fifo;
+            ram[wr_pt[BIT_WIDTH-1:0]] <= in_fifo;
             wr_pt <= wr_pt + 1;
         end 
+        else if (i_push & !i_pop & is_fifo_full)
+        begin
+            wr_pt <= wr_pt;
+        end
     end
     
     //-------------------------------READ: LOAD DATA FROM FIFO TO MUX------------------------------//
@@ -69,10 +75,14 @@ module fifo(clk, rst_n, in_fifo, out_fifo, i_push, i_pop, i_flush, is_fifo_empty
         begin
             rd_pt <= 0;
         end
-        else if (re_fifo || (i_push & i_pop & is_fifo_full))
+        else if (re_fifo || (i_push & i_pop & is_fifo_full) || (i_push & i_pop & is_fifo_available))
         begin
-            out_fifo <= ram[rd_pt];
+            out_fifo <= ram[rd_pt[BIT_WIDTH-1:0]];
             rd_pt <= rd_pt + 1;
+        end
+        else if (!i_push & i_pop & is_fifo_empty)
+        begin
+            rd_pt <= rd_pt;
         end
     end 
     
